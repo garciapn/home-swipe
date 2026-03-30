@@ -1,556 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>🏘️ Grove Street Estates</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Share+Tech+Mono&display=swap");
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amy — AI Home Search · Leesburg, VA</title>
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Share Tech Mono', monospace;
-    background: #0a0a0a;
-    border-top: 3px solid #ff6b00;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 16px;
-    color: #e0e0e0;
-  }
-  header {
-    text-align: center;
-    margin-bottom: 24px;
-  }
-  header h1 {
-    font-family: 'Oswald', Impact, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #ff6b00;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 12px rgba(255,107,0,0.5);
-  }
-  header p { color: #888; font-size: 0.82rem; margin-top: 6px; letter-spacing: 1px; }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  /* ── Deck ── */
-  #deck {
-    position: relative;
-    width: 100%;
-    max-width: 380px;
-    height: 560px;
-    margin-bottom: 24px;
-  }
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Instrument Serif', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            muted: '#888888',
+            dimmed: '#666666',
+            border: 'rgba(255,255,255,0.12)',
+          },
+        },
+      },
+    };
+  </script>
 
-  .card {
-    position: absolute;
-    inset: 0;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-    cursor: grab;
-    user-select: none;
-    transition: transform 0.1s;
-    background: #141414;
-    border: 1px solid #ff6b00;
-  }
-  .card:hover {
-    box-shadow: 0 0 24px rgba(255,107,0,0.4), 0 20px 60px rgba(0,0,0,0.8);
-  }
-  .card:active { cursor: grabbing; }
-  .card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0,0,0,0.08) 2px,
-      rgba(0,0,0,0.08) 4px
-    );
-    pointer-events: none;
-    z-index: 10;
-  }
+  <style>
+    /* ── Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .card-photo {
-    width: 100%;
-    height: 62%;
-    object-fit: cover;
-    display: block;
-    background: #141414;
-  }
-  .card-no-photo {
-    width: 100%;
-    height: 62%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    background: linear-gradient(135deg, #1a1a1a, #141414);
-  }
+    html { scroll-behavior: smooth; }
 
-  .card-info {
-    padding: 16px;
-  }
-  .card-price {
-    font-family: 'Oswald', Impact, sans-serif;
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: #ff6b00;
-    text-shadow: 0 0 8px rgba(255,107,0,0.4);
-    letter-spacing: 1px;
-  }
-  .card-address {
-    font-size: 0.82rem;
-    color: #bbb;
-    margin: 4px 0 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    letter-spacing: 0.5px;
-  }
-  .card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .tag {
-    background: rgba(255,107,0,0.08);
-    border: 1px solid rgba(255,107,0,0.3);
-    border-radius: 2px;
-    padding: 3px 8px;
-    font-size: 0.76rem;
-    color: #ccc;
-    font-family: 'Share Tech Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .tag.green { background: rgba(57,255,20,0.08); border-color: rgba(57,255,20,0.4); color: #39ff14; }
-  .tag.yellow { background: rgba(255,200,0,0.08); border-color: rgba(255,200,0,0.3); color: #ffd700; }
-  .tag.red { background: rgba(204,0,0,0.15); border-color: rgba(204,0,0,0.5); color: #ff4444; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* Swipe indicators */
-  .stamp {
-    position: absolute;
-    top: 30px;
-    padding: 8px 18px;
-    border-radius: 2px;
-    font-family: 'Oswald', Impact, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.1s;
-    border: 4px solid;
-    transform: rotate(-15deg);
-  }
-  .stamp.like  {
-    right: 20px;
-    color: #39ff14;
-    border-color: #39ff14;
-    text-shadow: 0 0 12px #39ff14;
-    box-shadow: 0 0 16px rgba(57,255,20,0.3);
-    transform: rotate(-15deg);
-  }
-  .stamp.nope  {
-    left: 20px;
-    color: #cc0000;
-    border-color: #cc0000;
-    text-shadow: 0 0 12px #cc0000;
-    box-shadow: 0 0 16px rgba(204,0,0,0.3);
-    transform: rotate(15deg);
-  }
+    /* ── Liquid Glass ──────────────────────────────────────── */
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.10),
+        0 4px 32px rgba(0, 0, 0, 0.4);
+    }
 
-  /* ── Buttons ── */
-  .buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 28px;
-  }
-  .btn {
-    width: 64px; height: 64px;
-    border-radius: 3px;
-    border: 2px solid transparent;
-    font-size: 1.6rem;
-    cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.15s;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .btn:hover { transform: scale(1.12); }
-  .btn.skip  {
-    background: #1a0000;
-    border-color: #cc0000;
-    color: #cc0000;
-    box-shadow: 0 4px 16px rgba(204,0,0,0.3);
-  }
-  .btn.skip:hover { box-shadow: 0 0 20px rgba(204,0,0,0.6); }
-  .btn.like  {
-    background: #001a00;
-    border-color: #39ff14;
-    color: #39ff14;
-    box-shadow: 0 4px 16px rgba(57,255,20,0.3);
-  }
-  .btn.like:hover { box-shadow: 0 0 20px rgba(57,255,20,0.6); }
-  .btn.info  {
-    background: #1a0d00;
-    border-color: #ff6b00;
-    color: #ff6b00;
-    box-shadow: 0 4px 16px rgba(255,107,0,0.3);
-    font-size: 1.2rem;
-  }
-  .btn.info:hover { box-shadow: 0 0 20px rgba(255,107,0,0.6); }
+    .glass-btn {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .glass-btn:hover {
+      background: rgba(255, 255, 255, 0.13);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
 
-  /* ── Counter ── */
-  #counter {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.82rem;
-    color: #ff6b00;
-    margin-bottom: 20px;
-    text-align: center;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+    .outline-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.30);
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .outline-btn:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.50);
+    }
 
-  /* ── Liked section ── */
-  #liked-section {
-    width: 100%;
-    max-width: 420px;
-    margin-top: 8px;
-  }
-  #liked-section h2 {
-    font-family: 'Oswald', Impact, sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #39ff14;
-    text-shadow: 0 0 10px rgba(57,255,20,0.5);
-    margin-bottom: 12px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  .liked-card {
-    background: #141414;
-    border: 1px solid #ff6b00;
-    border-radius: 3px;
-    padding: 14px;
-    margin-bottom: 10px;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
-  .liked-thumb {
-    width: 60px; height: 60px;
-    border-radius: 2px;
-    object-fit: cover;
-    flex-shrink: 0;
-    background: #1a1a1a;
-    border: 1px solid rgba(255,107,0,0.3);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem;
-  }
-  .liked-thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
-  .liked-info { flex: 1; min-width: 0; }
-  .liked-price {
-    font-family: 'Oswald', Impact, sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #ff6b00;
-    letter-spacing: 1px;
-  }
-  .liked-addr  { font-size: 0.76rem; color: #aaa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.5px; }
-  .liked-meta  { font-size: 0.73rem; color: #666; margin-top: 2px; }
-  .liked-link  { color: #39ff14; text-decoration: none; font-size: 0.78rem; letter-spacing: 0.5px; }
-  .liked-link:hover { text-shadow: 0 0 8px rgba(57,255,20,0.6); }
+    /* ── Animations ───────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-  /* Done state */
-  #done {
-    display: none;
-    text-align: center;
-    padding: 40px 20px;
-  }
-  #done h2 {
-    font-family: 'Oswald', Impact, sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #ff6b00;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 0 0 16px rgba(255,107,0,0.6);
-    margin-bottom: 8px;
-  }
-  #done p  { color: #666; font-size: 0.85rem; letter-spacing: 1px; }
-  #restart-btn {
-    margin-top: 16px;
-    padding: 10px 28px;
-    background: transparent;
-    border: 2px solid #ff6b00;
-    border-radius: 2px;
-    color: #ff6b00;
-    font-family: 'Oswald', Impact, sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: box-shadow 0.15s, background 0.15s;
-  }
-  #restart-btn:hover {
-    background: rgba(255,107,0,0.1);
-    box-shadow: 0 0 16px rgba(255,107,0,0.5);
-  }
-</style>
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out forwards;
+    }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.30s; }
+    .delay-3 { animation-delay: 0.45s; }
+    .delay-4 { animation-delay: 0.60s; }
+    .delay-5 { animation-delay: 0.75s; }
+
+    /* IntersectionObserver triggers */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Section borders ──────────────────────────────────── */
+    .border-dim {
+      border-color: rgba(255, 255, 255, 0.10);
+    }
+
+    /* ── Hero background ──────────────────────────────────── */
+    .hero-bg {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 60%, #000 100%),
+        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* ── Navbar ───────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* ── Stat numbers ─────────────────────────────────────── */
+    .stat-number {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1;
+      color: #fff;
+    }
+
+    /* ── Listing image ────────────────────────────────────── */
+    .listing-img {
+      background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* ── Phone mockup ─────────────────────────────────────── */
+    .phone-frame {
+      border: 2px solid rgba(255,255,255,0.18);
+      box-shadow:
+        0 0 0 6px rgba(255,255,255,0.04),
+        0 24px 80px rgba(0,0,0,0.7);
+    }
+
+    /* ── Badge ────────────────────────────────────────────── */
+    .badge {
+      background: rgba(74, 222, 128, 0.15);
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      color: #4ade80;
+    }
+
+    /* ── Scrollbar ────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+
+    /* ── Responsive hero font ─────────────────────────────── */
+    .hero-heading {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(3rem, 8vw, 7.5rem);
+      line-height: 1.03;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    /* ── Section heading ──────────────────────────────────── */
+    .section-heading {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    /* ── Card heading ─────────────────────────────────────── */
+    .card-heading {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <h1>🏘️ Grove Street Estates</h1>
-  <p>Leesburg, VA · No Buster Zone · Swipe to Claim Your Turf</p>
-</header>
+<!-- ══════════════════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+    <!-- Brand -->
+    <a href="#hero" class="text-2xl font-serif text-white tracking-tight whitespace-nowrap">🏠 Amy</a>
 
-<div id="deck"></div>
-<div id="counter"></div>
-
-<div class="buttons">
-  <button class="btn skip" onclick="swipe('left')"  title="Skip">✗</button>
-  <button class="btn info" onclick="openLink()"      title="View listing">🔗</button>
-  <button class="btn like" onclick="swipe('right')" title="Save">♥</button>
-</div>
-
-<div id="done">
-  <h2>Mission Complete 💯</h2>
-  <p>You've seen all available homes.</p>
-  <button id="restart-btn" onclick="restart()">Run It Again</button>
-</div>
-
-<div id="liked-section">
-  <h2 id="liked-header" style="display:none">🟢 YOUR CREW'S SPOTS</h2>
-  <div id="liked-list"></div>
-</div>
-
-<script>
-const LISTINGS = [{"address":"1211 Musket Ct NE, Leesburg, VA, 20176","price":725000,"distance_miles":1.4,"beds":4,"baths":3,"sqft":3064,"year_built":1988,"days_on_mls":1,"hoa_fee":54,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/1211-Musket-Ct-NE_Leesburg_VA_20176_M60014-98732","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-27 14:01:35","price_per_sqft":237,"photo":"https://ap.rdcpix.com/24f70dc03dd583a901fe0d0f638457e5l-m3840923357od-w480_h360_x2.webp?w=1080&q=75"},{"address":"40246 Thomas Mill Rd, Leesburg, VA, 20175","price":750000,"distance_miles":2.5,"beds":3,"baths":3,"sqft":2621,"year_built":1978,"days_on_mls":1,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/40246-Thomas-Mill-Rd_Leesburg_VA_20175_M67567-98556","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-26 22:05:25","price_per_sqft":286,"photo":"https://ap.rdcpix.com/5bb18414ccd7bdf7f4025fa09c2b097dl-m2973800841od-w480_h360_x2.webp?w=1080&q=75"},{"address":"557 Rockbridge Dr SE, Leesburg, VA, 20175","price":525000,"distance_miles":0.9,"beds":4,"baths":2,"sqft":1549,"year_built":1984,"days_on_mls":2,"hoa_fee":32,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/557-Rockbridge-Dr-SE_Leesburg_VA_20175_M56940-40888","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-25 22:35:38","price_per_sqft":339,"photo":"https://ap.rdcpix.com/66b4556bf956a5636e4690ed67535530l-m3111725784od-w480_h360_x2.webp?w=1080&q=75"},{"address":"905 Tuscarora Dr SW, Leesburg, VA, 20175","price":749900,"distance_miles":1.2,"beds":4,"baths":3,"sqft":2084,"year_built":1965,"days_on_mls":3,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/905-Tuscarora-Dr-SW_Leesburg_VA_20175_M52255-03560","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-25 13:35:14","price_per_sqft":360,"photo":"https://ap.rdcpix.com/361f5329b2ea75ec882a6ae6dca4785dl-m1772396447od-w480_h360_x2.webp?w=1080&q=75"},{"address":"810 Wage Dr SW, Leesburg, VA, 20175","price":650000,"distance_miles":1.2,"beds":3,"baths":3,"sqft":1872,"year_built":1965,"days_on_mls":4,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/810-Wage-Dr-SW_Leesburg_VA_20175_M54237-72529","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-23 18:58:04","price_per_sqft":347,"photo":"https://ap.rdcpix.com/386a3cafa7422d97e715f07deb0bc90al-m300309847od-w480_h360_x2.webp?w=1080&q=75"},{"address":"429 Deerpath Ave SW, Leesburg, VA, 20175","price":799500,"distance_miles":1.3,"beds":4,"baths":3,"sqft":3263,"year_built":1988,"days_on_mls":9,"hoa_fee":84,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/429-Deerpath-Ave-SW_Leesburg_VA_20175_M62412-66919","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-18 19:36:04","price_per_sqft":245,"photo":"https://ap.rdcpix.com/3012bfa015cbd26fdc94a763bdbaae57l-m1206584361od-w480_h360_x2.webp?w=1080&q=75"},{"address":"828 Anthony Ct SE, Leesburg, VA, 20175","price":949000,"distance_miles":2.7,"beds":4,"baths":2,"sqft":2660,"year_built":2002,"days_on_mls":10,"hoa_fee":79,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/828-Anthony-Ct-SE_Leesburg_VA_20175_M52236-52675","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-17 20:50:50","price_per_sqft":357,"photo":"https://ap.rdcpix.com/59cb89da8870acec3327260cbe6b3dedl-m4093636931od-w480_h360_x2.webp?w=1080&q=75"},{"address":"608 Diskin Pl SW, Leesburg, VA, 20175","price":989000,"distance_miles":2.7,"beds":4,"baths":3,"sqft":3724,"year_built":1996,"days_on_mls":13,"hoa_fee":89,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/608-Diskin-Pl-SW_Leesburg_VA_20175_M67234-45537","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-15 06:24:09","price_per_sqft":266,"photo":"https://ap.rdcpix.com/f207216258715be1094819f90c0d1fd8l-m1550368135od-w480_h360_x2.webp?w=1080&q=75"},{"address":"406 Blue Ridge Ave NE, Leesburg, VA, 20176","price":849989,"distance_miles":0.6,"beds":4,"baths":3,"sqft":2584,"year_built":1984,"days_on_mls":26,"hoa_fee":null,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/406-Blue-Ridge-Ave-NE_Leesburg_VA_20176_M50450-99285","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-02 17:36:10","price_per_sqft":329,"photo":"https://ap.rdcpix.com/663fad6dd1cd6519555162cbf8984022l-m1723664141od-w480_h360_x2.webp?w=1080&q=75"}];
-const STORAGE_KEY = 'amy_liked_v2';
-
-let queue = [];
-let liked = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-
-// ── Init ──────────────────────────────────────────────────────
-function init() {
-  // Filter out already-seen
-  const seen = JSON.parse(localStorage.getItem('amy_seen') || '[]');
-  queue = LISTINGS.filter(l => !seen.includes(l.url));
-  if (!queue.length) queue = [...LISTINGS]; // reset if all seen
-
-  renderDeck();
-  renderLiked();
-}
-
-function formatPrice(p) {
-  return '$' + p.toLocaleString();
-}
-
-// ── Card HTML ──────────────────────────────────────────────────
-function makeCard(listing, zIndex) {
-  const div = document.createElement('div');
-  div.className = 'card';
-  div.style.zIndex = zIndex;
-  div.dataset.url = listing.url || '';
-
-  const photo = listing.photo
-    ? `<img class="card-photo" src="${listing.photo}" alt="home" onerror="this.parentNode.innerHTML='<div class=card-no-photo>🏠</div>'">`
-    : '<div class="card-no-photo">🏠</div>';
-
-  const beds  = listing.beds  ? `🛏 ${listing.beds}bd` : '';
-  const baths = listing.baths ? `🚿 ${listing.baths}ba` : '';
-  const sqft  = listing.sqft  ? `📐 ${listing.sqft.toLocaleString()} sqft` : '';
-  const yb    = listing.year_built ? `Built ${listing.year_built}` : '';
-  const dom   = listing.days_on_mls != null ? `${listing.days_on_mls}d listed` : '';
-  const hoa   = listing.hoa_fee === 0 ? 'No HOA' :
-                listing.hoa_fee     ? `HOA $${listing.hoa_fee}/mo` : '';
-  const ppsf  = listing.price_per_sqft ? `$${Math.round(listing.price_per_sqft)}/sqft` : '';
-
-  const domClass = listing.days_on_mls < 7 ? 'green' : listing.days_on_mls > 60 ? 'red' : '';
-  const hoaClass = listing.hoa_fee === 0 ? 'green' : '';
-
-  const tags = [beds, baths, sqft, ppsf, yb, dom && `<span class="tag ${domClass}">${dom}</span>`, hoa && `<span class="tag ${hoaClass}">${hoa}</span>`]
-    .filter(Boolean)
-    .map(t => t.startsWith('<') ? t : `<span class="tag">${t}</span>`)
-    .join('');
-
-  div.innerHTML = `
-    ${photo}
-    <div class="card-info">
-      <div class="card-price">${formatPrice(listing.price)}</div>
-      <div class="card-address">📍 ${listing.address}</div>
-      <div class="card-tags">${tags}</div>
+    <!-- Nav links (hidden on small screens) -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#hero"     class="text-sm text-white/70 hover:text-white transition-colors">Home</a>
+      <a href="#how"      class="text-sm text-white/70 hover:text-white transition-colors">Search</a>
+      <a href="#about"    class="text-sm text-white/70 hover:text-white transition-colors">About</a>
+      <a href="#footer"   class="text-sm text-white/70 hover:text-white transition-colors">Contact</a>
     </div>
-    <div class="stamp like">SAVE ♥</div>
-    <div class="stamp nope">SKIP ✗</div>
-  `;
 
-  addDragHandlers(div, listing);
-  return div;
-}
+    <!-- CTA -->
+    <a href="#picks" class="glass-btn text-white text-sm font-medium px-5 py-2.5 rounded-full cursor-pointer whitespace-nowrap">
+      Start Search
+    </a>
+  </div>
+</nav>
 
-function renderDeck() {
-  const deck = document.getElementById('deck');
-  deck.innerHTML = '';
-  document.getElementById('done').style.display = 'none';
-  deck.style.display = '';
 
-  if (!queue.length) {
-    document.getElementById('done').style.display = 'block';
-    deck.style.display = 'none';
-    updateCounter();
-    return;
-  }
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 1 — HERO
+══════════════════════════════════════════════════════════ -->
+<section id="hero" class="hero-bg relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-16">
 
-  // Show top 3 cards stacked
-  const visible = queue.slice(0, 3);
-  visible.reverse().forEach((l, i) => {
-    const card = makeCard(l, i + 1);
-    if (i < visible.length - 1) {
-      const offset = (visible.length - 1 - i) * 6;
-      card.style.transform = `translateY(${offset}px) scale(${1 - (visible.length - 1 - i) * 0.03})`;
-    }
-    deck.appendChild(card);
-  });
+  <!-- Content -->
+  <div class="max-w-4xl mx-auto flex flex-col items-center gap-6">
 
-  updateCounter();
-}
+    <!-- Label -->
+    <p class="fade-up text-xs font-medium tracking-[0.2em] uppercase text-white/50">
+      Leesburg, VA &nbsp;·&nbsp; AI-Powered Home Search
+    </p>
 
-function updateCounter() {
-  const el = document.getElementById('counter');
-  el.textContent = queue.length
-    ? `${queue.length} home${queue.length !== 1 ? 's' : ''} left · ${liked.length} saved`
-    : `${liked.length} saved`;
-}
+    <!-- Heading -->
+    <h1 class="hero-heading fade-up delay-1">
+      Find Your Perfect Home.<br />Before Anyone Else Does.
+    </h1>
 
-// ── Swipe logic ────────────────────────────────────────────────
-let startX, startY, isDragging = false;
-let activeCard = null;
+    <!-- Subtext -->
+    <p class="fade-up delay-2 text-base md:text-lg text-white/60 max-w-2xl leading-relaxed font-sans">
+      Amy searches Realtor.com, Zillow, and Redfin 24/7 — filtering for the homes that
+      actually match your criteria, delivered to you every morning.
+    </p>
 
-function addDragHandlers(card, listing) {
-  const onStart = (x, y) => {
-    startX = x; startY = y; isDragging = true; activeCard = card;
-  };
-  const onMove = (x, y) => {
-    if (!isDragging || activeCard !== card) return;
-    const dx = x - startX;
-    const dy = y - startY;
-    const rot = dx * 0.08;
-    card.style.transform = `translate(${dx}px, ${dy}px) rotate(${rot}deg)`;
-    const like = card.querySelector('.stamp.like');
-    const nope = card.querySelector('.stamp.nope');
-    if (dx > 30)  { like.style.opacity = Math.min((dx - 30) / 80, 1); nope.style.opacity = 0; }
-    else if (dx < -30) { nope.style.opacity = Math.min((-dx - 30) / 80, 1); like.style.opacity = 0; }
-    else { like.style.opacity = 0; nope.style.opacity = 0; }
-  };
-  const onEnd = (x) => {
-    if (!isDragging || activeCard !== card) return;
-    isDragging = false;
-    const dx = x - startX;
-    if (dx > 80)       animateOut(card, listing, 'right');
-    else if (dx < -80) animateOut(card, listing, 'left');
-    else { card.style.transform = ''; }
-  };
+    <!-- Buttons -->
+    <div class="fade-up delay-3 flex flex-col sm:flex-row gap-4 mt-2">
+      <a href="#picks"
+         class="glass-btn text-white font-medium px-8 py-4 rounded-full text-base cursor-pointer">
+        View Today's Picks
+      </a>
+      <a href="#how"
+         class="outline-btn text-white font-medium px-8 py-4 rounded-full text-base cursor-pointer">
+        How It Works
+      </a>
+    </div>
 
-  // Mouse
-  card.addEventListener('mousedown',  e => onStart(e.clientX, e.clientY));
-  window.addEventListener('mousemove', e => onMove(e.clientX, e.clientY));
-  window.addEventListener('mouseup',   e => onEnd(e.clientX));
+  </div>
 
-  // Touch
-  card.addEventListener('touchstart', e => onStart(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
-  card.addEventListener('touchmove',  e => onMove(e.touches[0].clientX, e.touches[0].clientY),  { passive: true });
-  card.addEventListener('touchend',   e => onEnd(e.changedTouches[0].clientX));
-}
+  <!-- Scroll hint -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 fade-up delay-5">
+    <span class="text-xs text-white/30 tracking-widest uppercase">Scroll</span>
+    <div class="w-px h-8 bg-gradient-to-b from-white/20 to-transparent"></div>
+  </div>
+</section>
 
-function animateOut(card, listing, dir) {
-  const x = dir === 'right' ? 600 : -600;
-  card.style.transition = 'transform 0.35s ease';
-  card.style.transform  = `translateX(${x}px) rotate(${dir === 'right' ? 25 : -25}deg)`;
-  setTimeout(() => {
-    queue.shift();
-    if (dir === 'right') saveLike(listing);
-    // Track seen
-    const seen = JSON.parse(localStorage.getItem('amy_seen') || '[]');
-    if (listing.url) seen.push(listing.url);
-    localStorage.setItem('amy_seen', JSON.stringify(seen.slice(-200)));
-    renderDeck();
-    renderLiked();
-  }, 350);
-}
 
-function swipe(dir) {
-  if (!queue.length) return;
-  const deck = document.getElementById('deck');
-  const cards = deck.querySelectorAll('.card');
-  const top = cards[cards.length - 1];
-  if (!top) return;
-  animateOut(top, queue[0], dir);
-}
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 2 — STATS BAR
+══════════════════════════════════════════════════════════ -->
+<section id="stats" class="border-t border-b border-dim bg-black py-12 px-6">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
 
-function openLink() {
-  if (!queue.length) return;
-  const url = queue[0].url;
-  if (url) window.open(url, '_blank');
-}
+    <div class="reveal flex flex-col items-center gap-2 md:border-r border-dim">
+      <span class="stat-number">8</span>
+      <span class="text-xs text-white/50 tracking-widest uppercase font-sans">Homes Scanned Today</span>
+    </div>
 
-function restart() {
-  localStorage.removeItem('amy_seen');
-  queue = [...LISTINGS];
-  renderDeck();
-}
+    <div class="reveal delay-1 flex flex-col items-center gap-2 md:border-r border-dim">
+      <span class="stat-number">3 mi</span>
+      <span class="text-xs text-white/50 tracking-widest uppercase font-sans">From Old Town</span>
+    </div>
 
-// ── Liked ──────────────────────────────────────────────────────
-function saveLike(listing) {
-  if (!liked.some(l => l.url === listing.url)) {
-    liked.unshift(listing);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(liked));
-  }
-}
+    <div class="reveal delay-2 flex flex-col items-center gap-2 md:border-r border-dim">
+      <span class="stat-number">24/7</span>
+      <span class="text-xs text-white/50 tracking-widest uppercase font-sans">Monitoring</span>
+    </div>
 
-function renderLiked() {
-  const list   = document.getElementById('liked-list');
-  const header = document.getElementById('liked-header');
-  if (!liked.length) { list.innerHTML = ''; header.style.display = 'none'; return; }
+    <div class="reveal delay-3 flex flex-col items-center gap-2">
+      <span class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">$500K–$1M</span>
+      <span class="text-xs text-white/50 tracking-widest uppercase font-sans">Budget Range</span>
+    </div>
 
-  header.style.display = 'block';
-  list.innerHTML = liked.map(l => {
-    const thumb = l.photo
-      ? `<div class="liked-thumb"><img src="${l.photo}" alt="home"></div>`
-      : `<div class="liked-thumb">🏠</div>`;
-    const meta = [
-      l.beds  ? `${l.beds}bd` : '',
-      l.baths ? `${l.baths}ba` : '',
-      l.sqft  ? `${l.sqft.toLocaleString()} sqft` : '',
-      l.year_built ? `Built ${l.year_built}` : '',
-    ].filter(Boolean).join(' · ');
+  </div>
+</section>
 
-    return `
-      <div class="liked-card">
-        ${thumb}
-        <div class="liked-info">
-          <div class="liked-price">${formatPrice(l.price)}</div>
-          <div class="liked-addr">${l.address}</div>
-          <div class="liked-meta">${meta}</div>
-          <a class="liked-link" href="${l.url}" target="_blank">View listing →</a>
-        </div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 3 — HOW AMY WORKS
+══════════════════════════════════════════════════════════ -->
+<section id="how" class="bg-black py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs text-white/40 tracking-[0.2em] uppercase mb-4 font-sans">The Process</p>
+      <h2 class="section-heading">How Amy Works</h2>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="reveal glass rounded-2xl p-8 flex flex-col gap-4">
+        <div class="text-4xl mb-2">🔍</div>
+        <h3 class="card-heading">Scout</h3>
+        <p class="text-sm text-white/55 leading-relaxed font-sans">
+          Amy searches 3 sources simultaneously every morning at 8 AM and 8 PM —
+          Realtor.com, Zillow, and Redfin — so no new listing slips through.
+        </p>
       </div>
-    `;
-  }).join('');
 
-  updateCounter();
-}
+      <!-- Card 2 -->
+      <div class="reveal delay-1 glass rounded-2xl p-8 flex flex-col gap-4">
+        <div class="text-4xl mb-2">🧹</div>
+        <h3 class="card-heading">Filter</h3>
+        <p class="text-sm text-white/55 leading-relaxed font-sans">
+          Only SFH, $500K–$1M, within 3 miles of Old Town Leesburg.
+          No noise, no scrolling — just the homes that actually match.
+        </p>
+      </div>
 
-init();
+      <!-- Card 3 -->
+      <div class="reveal delay-2 glass rounded-2xl p-8 flex flex-col gap-4">
+        <div class="text-4xl mb-2">📱</div>
+        <h3 class="card-heading">Deliver</h3>
+        <p class="text-sm text-white/55 leading-relaxed font-sans">
+          You get a Telegram digest + a Tinder-style swipe app updated fresh every run.
+          Like, skip, or save homes with a single gesture.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 4 — FEATURED LISTING PREVIEW
+══════════════════════════════════════════════════════════ -->
+<section id="picks" class="bg-black py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-14 reveal">
+      <p class="text-xs text-white/40 tracking-[0.2em] uppercase mb-4 font-sans">Fresh This Morning</p>
+      <h2 class="section-heading">Today's Top Pick</h2>
+    </div>
+
+    <!-- Listing Card -->
+    <div class="reveal glass rounded-2xl overflow-hidden">
+
+      <!-- Photo -->
+      <div class="listing-img w-full h-64 md:h-80"></div>
+
+      <!-- Details -->
+      <div class="p-8 flex flex-col gap-6">
+
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+          <div>
+            <p class="font-serif text-4xl text-white">$749,900</p>
+            <p class="text-white/50 text-sm mt-1 font-sans">4 bd &nbsp;·&nbsp; 3 ba &nbsp;·&nbsp; 2,084 sqft</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge text-xs font-medium px-3 py-1.5 rounded-full">No HOA</span>
+            <span class="glass text-white/60 text-xs font-medium px-3 py-1.5 rounded-full">3 days listed</span>
+            <span class="glass text-white/60 text-xs font-medium px-3 py-1.5 rounded-full">1.2 mi from Old Town</span>
+          </div>
+        </div>
+
+        <!-- Meta row -->
+        <div class="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
+          <div class="flex flex-col gap-1">
+            <span class="text-xs text-white/35 uppercase tracking-wider font-sans">Distance</span>
+            <span class="text-sm text-white font-sans">1.2 mi · Old Town</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="text-xs text-white/35 uppercase tracking-wider font-sans">Days Listed</span>
+            <span class="text-sm text-white font-sans">3 days</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="text-xs text-white/35 uppercase tracking-wider font-sans">HOA</span>
+            <span class="text-sm text-green-400 font-sans">None</span>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#" class="glass-btn text-white text-sm font-medium px-6 py-3 rounded-full text-center cursor-pointer">
+            View on Realtor.com ↗
+          </a>
+          <button class="outline-btn text-white text-sm font-medium px-6 py-3 rounded-full cursor-pointer"
+                  onclick="this.textContent='✓ Saved'; this.style.borderColor='rgba(74,222,128,0.5)'; this.style.color='#4ade80';">
+            Add to Saved
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 5 — SWIPE APP PREVIEW
+══════════════════════════════════════════════════════════ -->
+<section id="about" class="bg-black py-24 px-6">
+  <div class="max-w-5xl mx-auto flex flex-col items-center gap-14">
+
+    <!-- Heading -->
+    <div class="text-center reveal">
+      <p class="text-xs text-white/40 tracking-[0.2em] uppercase mb-4 font-sans">Swipe Interface</p>
+      <h2 class="section-heading mb-4">Swipe Your Way to Home</h2>
+      <p class="text-white/50 text-base max-w-xl mx-auto leading-relaxed font-sans">
+        Skip the endless Zillow scroll. Amy's swipe app surfaces only the homes that
+        fit — like them, skip them, or save for later. Your feedback sharpens the filter over time.
+      </p>
+    </div>
+
+    <!-- Phone/Browser Mockup -->
+    <div class="reveal w-full max-w-sm">
+      <div class="glass phone-frame rounded-3xl overflow-hidden">
+
+        <!-- Browser chrome -->
+        <div class="bg-white/5 border-b border-white/10 px-4 py-3 flex items-center gap-3">
+          <div class="flex gap-1.5">
+            <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
+          </div>
+          <div class="flex-1 bg-white/8 rounded-md px-3 py-1 text-xs text-white/35 font-sans truncate">
+            garciapn.github.io/amy-homes/
+          </div>
+        </div>
+
+        <!-- App interior -->
+        <div class="p-5 flex flex-col gap-4" style="background: linear-gradient(160deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%);">
+
+          <!-- App header -->
+          <div class="flex items-center justify-between">
+            <span class="font-serif text-lg text-white">🏠 Amy</span>
+            <span class="text-xs text-white/35 font-sans">8 new homes</span>
+          </div>
+
+          <!-- Mock card stack -->
+          <div class="relative h-52">
+            <!-- Back card (shadow) -->
+            <div class="absolute inset-x-4 top-3 bottom-0 glass rounded-xl opacity-50"></div>
+            <!-- Front card -->
+            <div class="absolute inset-0 glass rounded-xl overflow-hidden flex flex-col">
+              <div class="flex-1 listing-img"></div>
+              <div class="p-3">
+                <p class="font-serif text-white text-base">$689,000</p>
+                <p class="text-xs text-white/50 font-sans">3 bd · 2 ba · 1,820 sqft · 0.9mi</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swipe buttons -->
+          <div class="flex justify-center gap-6 py-2">
+            <button class="w-12 h-12 rounded-full glass flex items-center justify-center text-xl hover:scale-110 transition-transform">✕</button>
+            <button class="w-12 h-12 rounded-full glass flex items-center justify-center text-xl hover:scale-110 transition-transform">🔖</button>
+            <button class="w-12 h-12 rounded-full glass flex items-center justify-center text-xl hover:scale-110 transition-transform">♥</button>
+          </div>
+
+          <!-- Footer -->
+          <p class="text-center text-xs text-white/25 font-sans">Updated 8 AM &amp; 8 PM PST</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <a href="https://garciapn.github.io/amy-homes/"
+       target="_blank" rel="noopener"
+       class="reveal glass-btn text-white font-medium px-10 py-4 rounded-full text-base">
+      Open Swipe App →
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 6 — FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer id="footer" class="bg-black border-t border-white/10 pt-16 pb-10 px-6">
+  <div class="max-w-5xl mx-auto flex flex-col items-center gap-6 text-center">
+
+    <!-- Brand -->
+    <span class="font-serif text-3xl text-white">🏠 Amy</span>
+
+    <!-- Tagline -->
+    <p class="text-white/40 text-sm font-sans">Automated home scouting for Leesburg, VA</p>
+
+    <!-- Links -->
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="#picks"   class="text-sm text-white/40 hover:text-white transition-colors font-sans">Dashboard</a>
+      <a href="https://garciapn.github.io/amy-homes/" target="_blank" rel="noopener"
+         class="text-sm text-white/40 hover:text-white transition-colors font-sans">Swipe App</a>
+      <a href="mailto:contact@example.com"
+         class="text-sm text-white/40 hover:text-white transition-colors font-sans">Contact</a>
+    </div>
+
+    <!-- Update schedule -->
+    <p class="text-xs text-white/25 font-sans tracking-wider uppercase">Updated daily at 8 AM + 8 PM PST</p>
+
+    <!-- Divider -->
+    <div class="w-full border-t border-white/6 pt-6">
+      <p class="text-xs text-white/20 font-sans">© 2026 Amy · AI-Powered Real Estate Search · Leesburg, VA</p>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     JS — Scroll reveal + smooth interactions
+══════════════════════════════════════════════════════════ -->
+<script>
+  // IntersectionObserver for .reveal elements
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        // stagger siblings slightly
+        const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+        let delay = 0;
+        siblings.forEach((el, idx) => {
+          if (el === entry.target) delay = idx * 120;
+        });
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Navbar hide on scroll down, show on scroll up
+  let lastScroll = 0;
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const current = window.scrollY;
+    if (current > lastScroll && current > 80) {
+      nav.style.transform = 'translateY(-100%)';
+    } else {
+      nav.style.transform = 'translateY(0)';
+    }
+    lastScroll = current;
+  }, { passive: true });
+  nav.style.transition = 'transform 0.3s ease';
 </script>
+
 </body>
 </html>
