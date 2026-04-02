@@ -305,6 +305,26 @@
     box-shadow: 0 0 16px rgba(255,107,0,0.5);
   }
 
+  /* ── Extra fields ── */
+  .card-extra {
+    font-size: 0.74rem;
+    color: #888;
+    margin: 4px 0;
+    letter-spacing: 0.3px;
+  }
+  .card-desc {
+    font-size: 0.70rem;
+    color: #555;
+    margin-top: 6px;
+    line-height: 1.4;
+    border-top: 1px solid rgba(255,107,0,0.1);
+    padding-top: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
   /* ── Mortgage section ── */
   .card-mortgage {
     margin-top: 10px;
@@ -335,7 +355,7 @@
 
 <header>
   <h1>🏘️ Grove Street Estates</h1>
-  <p>Leesburg, VA · No Buster Zone · Swipe to Claim Your Turf</p>
+  <p>Leesburg VA · Niche A · Schools A- · ~46min DC · $500K–$1M SFH</p>
 </header>
 
 <div id="deck"></div>
@@ -359,7 +379,7 @@
 </div>
 
 <script>
-const LISTINGS = [{"address":"1226 Barksdale Dr NE, Leesburg, VA, 20176","price":899900,"distance_miles":1.7,"beds":4,"baths":2,"sqft":2944,"year_built":1999,"days_on_mls":6,"hoa_fee":68,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/1226-Barksdale-Dr-NE_Leesburg_VA_20176_M58670-05945","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-26 12:21:11","price_per_sqft":306,"photo":"https://ap.rdcpix.com/005e2e04cd38ce613b825d9326043dbfl-m294913248od-w480_h360_x2.webp?w=1080&q=75"},{"address":"905 Tuscarora Dr SW, Leesburg, VA, 20175","price":749900,"distance_miles":1.2,"beds":4,"baths":3,"sqft":2084,"year_built":1965,"days_on_mls":7,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/905-Tuscarora-Dr-SW_Leesburg_VA_20175_M52255-03560","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-25 13:35:14","price_per_sqft":360,"photo":"https://ap.rdcpix.com/361f5329b2ea75ec882a6ae6dca4785dl-m1772396447od-w480_h360_x2.webp?w=1080&q=75"},{"address":"608 Diskin Pl SW, Leesburg, VA, 20175","price":989000,"distance_miles":2.7,"beds":4,"baths":3,"sqft":3724,"year_built":1996,"days_on_mls":18,"hoa_fee":89,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/608-Diskin-Pl-SW_Leesburg_VA_20175_M67234-45537","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-15 06:24:09","price_per_sqft":266,"photo":"https://ap.rdcpix.com/f207216258715be1094819f90c0d1fd8l-m1550368135od-w480_h360_x2.webp?w=1080&q=75"},{"address":"224 Lawford Dr SW, Leesburg, VA, 20175","price":885000,"distance_miles":2.1,"beds":4,"baths":3,"sqft":3190,"year_built":1997,"days_on_mls":27,"hoa_fee":65,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/224-Lawford-Dr-SW_Leesburg_VA_20175_M53694-61896","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-05 17:25:47","price_per_sqft":277,"photo":"https://ap.rdcpix.com/6f250dcab3f281251fe31dfe564c7eeel-m585935429od-w480_h360_x2.webp?w=1080&q=75"},{"address":"212 Masons Ln SE, Leesburg, VA, 20175","price":725000,"distance_miles":2.2,"beds":2,"baths":2,"sqft":1878,"year_built":1960,"days_on_mls":39,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/212-Masons-Ln-SE_Leesburg_VA_20175_M57995-09803","source":"realtor.com","status":"FOR_SALE","list_date":"2026-02-21 23:15:50","price_per_sqft":386,"photo":"https://ap.rdcpix.com/9f9964d81426c3724e5fd8ab7830f385l-m536367976od-w480_h360_x2.webp?w=1080&q=75"}];
+const LISTINGS = [{"address":"1396 S King St, Leesburg, VA, 20175","price":847000,"distance_miles":2.2,"beds":3,"baths":3,"half_baths":null,"sqft":1728,"lot_sqft":41382,"year_built":1973,"stories":2,"garage":3,"days_on_mls":1,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/1396-S-King-St_Leesburg_VA_20175_M53008-55296","source":"realtor.com","status":"FOR_SALE","list_date":"2026-04-01","price_per_sqft":490,"estimated_value":761300,"value_score":-11.3,"last_sold_price":163800,"last_sold_date":"1998-12-02","photo":"https://ap.rdcpix.com/71d4f0abec98ad0611a7e1be6a9b2d72l-m1528948442od-w480_h360_x2.webp?w=1080&q=75","alt_photos":["https://ap.rdcpix.com/71d4f0abec98ad0611a7e1be6a9b2d72l-m1528948442od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/71d4f0abec98ad0611a7e1be6a9b2d72l-m2919972729od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/71d4f0abec98ad0611a7e1be6a9b2d72l-m1022509063od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/71d4f0abec98ad0611a7e1be6a9b2d72l-m3558961187od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/71d4f0abec98ad0611a7e1be6a9b2d72l-m346336957od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/71d4f0abec98ad0611a7e1be6a9b2d72l-m867414329od-w480_h360_x2.webp?w=1080&q=75"],"description":"Buy 1 , 2 or 3 Properties***** This home sits adjacent to two other properties/homes for sale**** Home was owned by the same family and is conveniently located in the Leesburg city limits*****DO YOU LOVE VINTAGE?????? This charming place has a throwback in time feel with original…","agent_name":"Nancy Yahner","mls_id":"VALO2117374"},{"address":"Leesburg, VA, 20175","price":897000,"distance_miles":2.2,"beds":3,"baths":2,"half_baths":null,"sqft":1910,"lot_sqft":41818,"year_built":1975,"stories":2,"garage":2,"days_on_mls":1,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/Leesburg_VA_20175_M66095-64669","source":"realtor.com","status":"FOR_SALE","list_date":"2026-04-01","price_per_sqft":470,"estimated_value":705000,"value_score":-27.2,"last_sold_price":210000,"last_sold_date":"2001-06-29","photo":"https://ap.rdcpix.com/c9547135895f22904ed8a5c650d334f8l-m3488420408od-w480_h360_x2.webp?w=1080&q=75","alt_photos":["https://ap.rdcpix.com/c9547135895f22904ed8a5c650d334f8l-m3488420408od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/c9547135895f22904ed8a5c650d334f8l-m1899936955od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/c9547135895f22904ed8a5c650d334f8l-m176484217od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/c9547135895f22904ed8a5c650d334f8l-m1214445026od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/c9547135895f22904ed8a5c650d334f8l-m368956750od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/c9547135895f22904ed8a5c650d334f8l-m2405982987od-w480_h360_x2.webp?w=1080&q=75"],"description":"Looking for a Special Place and Opportunity - Stop Looking and come see this all Brick Beautiful Rambler with charming front porch and a side load 2 car attached garage ***Located in Leesburg city limits sited on just under an acre****If you like a little character you will fall …","agent_name":"Nancy Yahner","mls_id":"VALO2117372"},{"address":"306 Lounsbury Ct NE, Leesburg, VA, 20176","price":800000,"distance_miles":0.5,"beds":3,"baths":3,"half_baths":null,"sqft":2452,"lot_sqft":11761,"year_built":1986,"stories":2,"garage":2,"days_on_mls":4,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/306-Lounsbury-Ct-NE_Leesburg_VA_20176_M64528-67678","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-28","price_per_sqft":326,"estimated_value":732000,"value_score":-9.3,"last_sold_price":173000,"last_sold_date":"1998-08-21","photo":"https://ap.rdcpix.com/21188864f46480c99d26b440e0dbff42l-m104494218od-w480_h360_x2.webp?w=1080&q=75","alt_photos":["https://ap.rdcpix.com/21188864f46480c99d26b440e0dbff42l-m104494218od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/21188864f46480c99d26b440e0dbff42l-m3118208392od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/21188864f46480c99d26b440e0dbff42l-m228296923od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/21188864f46480c99d26b440e0dbff42l-m449736118od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/21188864f46480c99d26b440e0dbff42l-m3493937725od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/21188864f46480c99d26b440e0dbff42l-m2840115035od-w480_h360_x2.webp?w=1080&q=75"],"description":"Some homes simply feel right the moment you walk in-and this split-level single-family home is one of them. Comfortable, welcoming, and thoughtfully updated, it offers the kind of everyday ease that's hard to find. Upstairs, four well-sized bedrooms and two full bathrooms provide…","agent_name":"Claudia Viana","mls_id":"VALO2118014"},{"address":"1226 Barksdale Dr NE, Leesburg, VA, 20176","price":899900,"distance_miles":1.7,"beds":4,"baths":2,"half_baths":1,"sqft":2944,"lot_sqft":7405,"year_built":1999,"stories":3,"garage":2,"days_on_mls":6,"hoa_fee":68,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/1226-Barksdale-Dr-NE_Leesburg_VA_20176_M58670-05945","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-26","price_per_sqft":306,"estimated_value":874600,"value_score":-2.9,"last_sold_price":400000,"last_sold_date":"2012-07-31","photo":"https://ap.rdcpix.com/005e2e04cd38ce613b825d9326043dbfl-m294913248od-w480_h360_x2.webp?w=1080&q=75","alt_photos":["https://ap.rdcpix.com/005e2e04cd38ce613b825d9326043dbfl-m294913248od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/005e2e04cd38ce613b825d9326043dbfl-m1582200242od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/005e2e04cd38ce613b825d9326043dbfl-m1467315950od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/005e2e04cd38ce613b825d9326043dbfl-m656293534od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/005e2e04cd38ce613b825d9326043dbfl-m1384883179od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/005e2e04cd38ce613b825d9326043dbfl-m3589900134od-w480_h360_x2.webp?w=1080&q=75"],"description":"Don't miss this beautiful 4 bedroom/2.5 bath colonial in sought after Potomac Crossing! This home has almost 3,000 finished square feet and has been tastefully updated with fresh paint, new flooring, updated kitchen/appliances and more! The main level features a dramatic 2 story …","agent_name":"Paul Thistle","mls_id":"VALO2119136"},{"address":"905 Tuscarora Dr SW, Leesburg, VA, 20175","price":749900,"distance_miles":1.2,"beds":4,"baths":3,"half_baths":null,"sqft":2084,"lot_sqft":10890,"year_built":1965,"stories":2,"garage":1,"days_on_mls":7,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/905-Tuscarora-Dr-SW_Leesburg_VA_20175_M52255-03560","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-25","price_per_sqft":360,"estimated_value":606726,"value_score":-23.6,"last_sold_price":452000,"last_sold_date":"2026-01-30","photo":"https://ap.rdcpix.com/361f5329b2ea75ec882a6ae6dca4785dl-m1772396447od-w480_h360_x2.webp?w=1080&q=75","alt_photos":["https://ap.rdcpix.com/361f5329b2ea75ec882a6ae6dca4785dl-m1772396447od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/361f5329b2ea75ec882a6ae6dca4785dl-m4206626747od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/361f5329b2ea75ec882a6ae6dca4785dl-m2688970396od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/361f5329b2ea75ec882a6ae6dca4785dl-m4074851130od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/361f5329b2ea75ec882a6ae6dca4785dl-m2038662767od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/361f5329b2ea75ec882a6ae6dca4785dl-m2393944397od-w480_h360_x2.webp?w=1080&q=75"],"description":"Beautifully renovated and ideally situated on a quiet cul-de-sac just outside the Town of Leesburg, this stunning home offers the perfect blend of modern upgrades and peaceful living. Thoughtfully updated throughout, the home features a brand-new roof, new HVAC system, new floori…","agent_name":"Zaryab Mahmood","mls_id":"VALO2119138"},{"address":"608 Diskin Pl SW, Leesburg, VA, 20175","price":989000,"distance_miles":2.7,"beds":4,"baths":3,"half_baths":1,"sqft":3724,"lot_sqft":11326,"year_built":1996,"stories":3,"garage":2,"days_on_mls":18,"hoa_fee":89,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/608-Diskin-Pl-SW_Leesburg_VA_20175_M67234-45537","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-15","price_per_sqft":266,"estimated_value":1036800,"value_score":4.6,"last_sold_price":570000,"last_sold_date":"2010-07-19","photo":"https://ap.rdcpix.com/f207216258715be1094819f90c0d1fd8l-m1550368135od-w480_h360_x2.webp?w=1080&q=75","alt_photos":["https://ap.rdcpix.com/f207216258715be1094819f90c0d1fd8l-m1550368135od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/f207216258715be1094819f90c0d1fd8l-m704188531od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/f207216258715be1094819f90c0d1fd8l-m1435477203od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/f207216258715be1094819f90c0d1fd8l-m2696497502od-w480_h360_x2.webp?w=1080&q=75"],"description":"PROFESSIONAL PHOTOS COMING SOON! This beautifully maintained home spans three finished levels, offering space and flexibility for every lifestyle. From the moment you go through the front door, you will be greeted with newly refinished wood floors that gleam with warmth and chara…","agent_name":"Joyce Santiago","mls_id":"VALO2117762"},{"address":"224 Lawford Dr SW, Leesburg, VA, 20175","price":885000,"distance_miles":2.1,"beds":4,"baths":3,"half_baths":1,"sqft":3190,"lot_sqft":7841,"year_built":1997,"stories":2,"garage":2,"days_on_mls":27,"hoa_fee":65,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/224-Lawford-Dr-SW_Leesburg_VA_20175_M53694-61896","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-05","price_per_sqft":277,"estimated_value":947000,"value_score":6.5,"last_sold_price":223000,"last_sold_date":"1997-10-02","photo":"https://ap.rdcpix.com/6f250dcab3f281251fe31dfe564c7eeel-m585935429od-w480_h360_x2.webp?w=1080&q=75","alt_photos":["https://ap.rdcpix.com/6f250dcab3f281251fe31dfe564c7eeel-m585935429od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/6f250dcab3f281251fe31dfe564c7eeel-m1122623552od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/6f250dcab3f281251fe31dfe564c7eeel-m3491486652od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/6f250dcab3f281251fe31dfe564c7eeel-m3667015847od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/6f250dcab3f281251fe31dfe564c7eeel-m1026780618od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/6f250dcab3f281251fe31dfe564c7eeel-m2345836852od-w480_h360_x2.webp?w=1080&q=75"],"description":"Timeless Colonial Living in Greenway Farm Welcome to 224 Lawford Dr SW - a beautifully maintained and thoughtfully updated colonial in one of Leesburg's most sought-after communities. Nestled in the heart of the desirable Greenway Farm neighborhood, this two-level Oxford model of…","agent_name":"Michael Thrash","mls_id":"VALO2117394"},{"address":"212 Masons Ln SE, Leesburg, VA, 20175","price":725000,"distance_miles":2.2,"beds":2,"baths":2,"half_baths":null,"sqft":1878,"lot_sqft":43560,"year_built":1960,"stories":2,"garage":2,"days_on_mls":39,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/212-Masons-Ln-SE_Leesburg_VA_20175_M57995-09803","source":"realtor.com","status":"FOR_SALE","list_date":"2026-02-21","price_per_sqft":386,"estimated_value":735200,"value_score":1.4,"last_sold_price":330000,"last_sold_date":"2014-09-12","photo":"https://ap.rdcpix.com/9f9964d81426c3724e5fd8ab7830f385l-m536367976od-w480_h360_x2.webp?w=1080&q=75","alt_photos":["https://ap.rdcpix.com/9f9964d81426c3724e5fd8ab7830f385l-m536367976od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/9f9964d81426c3724e5fd8ab7830f385l-m2167950123od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/9f9964d81426c3724e5fd8ab7830f385l-m2998605394od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/9f9964d81426c3724e5fd8ab7830f385l-m1081823405od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/9f9964d81426c3724e5fd8ab7830f385l-m3473136624od-w480_h360_x2.webp?w=1080&q=75","https://ap.rdcpix.com/9f9964d81426c3724e5fd8ab7830f385l-m387599663od-w480_h360_x2.webp?w=1080&q=75"],"description":"Location, location, location! Adjacent to the town of Leesburg. Charming, well maintained, all sides brick rambler, on versatile, 1 acre lot, with no HOA restrictions. Privacy and convenience. New roof December 2022. Relax on the oversized deck, enjoy a private backyard, with roo…","agent_name":"Annette Schafer","mls_id":"VALO2116064"}];
 
 // ── Mortgage Calculator ───────────────────────────────────────
 function calcMortgage(price, hoaFee) {
@@ -430,22 +450,46 @@ function makeCard(listing, zIndex) {
     .join('');
 
   const m = calcMortgage(listing.price, listing.hoa_fee);
-  const distLine = listing.distance_miles != null ? `🗺 ${listing.distance_miles} mi from Old Town` : '';
+
+  // Value badge
+  let valueBadgeHtml = '';
+  if (listing.value_score != null) {
+    if (listing.value_score >= 10)      valueBadgeHtml = '<span class="tag green">🟢 ' + listing.value_score + '% below est.</span>';
+    else if (listing.value_score >= 3)  valueBadgeHtml = '<span class="tag yellow">🟡 ' + listing.value_score + '% below est.</span>';
+    else if (listing.value_score < -3)  valueBadgeHtml = '<span class="tag red">🔴 ' + Math.abs(listing.value_score) + '% above est.</span>';
+  }
+
+  const lotAcres = listing.lot_sqft  ? '🌿 ' + (listing.lot_sqft/43560).toFixed(2) + 'ac lot' : '';
+  const garage   = listing.garage    ? '🚗 ' + listing.garage + '-car garage' : '';
+  const lastSold = listing.last_sold_price && listing.last_sold_date
+    ? 'Last sold $' + listing.last_sold_price.toLocaleString() + ' (' + listing.last_sold_date.slice(0,4) + ')' : '';
+  const estVal   = listing.estimated_value ? 'Est. value: $' + listing.estimated_value.toLocaleString() : '';
+  const mlsId    = listing.mls_id ? 'MLS: ' + listing.mls_id : '';
+  const descHtml = listing.description
+    ? '<div class="card-desc">' + listing.description + '</div>' : '';
+
+  const extraRow   = [lotAcres, garage].filter(Boolean).join(' · ');
+  const estValRow  = estVal ? ('<div class="mort-row">📊 ' + estVal + (lastSold ? ' · ' + lastSold : '') + '</div>') : '';
+  const mlsRow     = mlsId  ? ('<div class="mort-detail">' + mlsId + '</div>') : '';
+  const hoaStr     = m.hoa  ? ' + HOA $' + m.hoa : '';
 
   div.innerHTML = `
     ${photo}
     <div class="card-info">
       <div class="card-price">${formatPrice(listing.price)}</div>
       <div class="card-address">📍 ${listing.address}</div>
-      <div class="card-tags">${tags}</div>
+      <div class="card-tags">${tags}${valueBadgeHtml}</div>
+      ${extraRow ? '<div class="card-extra">' + extraRow + '</div>' : ''}
       <div class="card-mortgage">
-        ${distLine ? `<div class="mort-row">📍 ${distLine}</div>` : ''}
-        <div class="mort-row">⬇️ Down (20%): <b>$${m.down.toLocaleString()}</b></div>
-        <div class="mort-row">🏦 Loan: $${m.loan.toLocaleString()}</div>
-        <div class="mort-row">📅 Est. Monthly (P&I): ~$${m.pi.toLocaleString()}/mo</div>
+        <div class="mort-row">🗺 ${listing.distance_miles} mi Old Town · ~46min DC · ~15min Sterling</div>
+        ${estValRow}
+        <div class="mort-row">⬇️ Down: <b>$${m.down.toLocaleString()}</b> · 🏦 Loan: $${m.loan.toLocaleString()}</div>
+        <div class="mort-row">📅 P&I: ~$${m.pi.toLocaleString()}/mo</div>
         <div class="mort-row highlight">💵 Real Monthly: ~$${m.total.toLocaleString()}/mo</div>
-        <div class="mort-detail">(P&I $${m.pi} + tax $${m.tax} + ins $${m.insurance || 200} + maint $${m.maint}${m.hoa ? ` + HOA $${m.hoa}` : ''})</div>
+        <div class="mort-detail">(P&I $${m.pi} + tax $${m.tax} + ins ${m.insurance||200} + maint $${m.maint}${hoaStr})</div>
+        ${mlsRow}
       </div>
+      ${descHtml}
     </div>
     <div class="stamp like">SAVE ♥</div>
     <div class="stamp nope">SKIP ✗</div>
