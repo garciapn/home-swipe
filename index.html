@@ -304,6 +304,31 @@
     background: rgba(255,107,0,0.1);
     box-shadow: 0 0 16px rgba(255,107,0,0.5);
   }
+
+  /* ── Mortgage section ── */
+  .card-mortgage {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,107,0,0.2);
+  }
+  .mort-row {
+    font-size: 0.75rem;
+    color: #bbb;
+    margin-bottom: 2px;
+    letter-spacing: 0.3px;
+  }
+  .mort-row b { color: #fff; }
+  .mort-row.highlight {
+    color: #39ff14;
+    font-size: 0.82rem;
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(57,255,20,0.4);
+  }
+  .mort-detail {
+    font-size: 0.68rem;
+    color: #555;
+    margin-top: 2px;
+  }
 </style>
 </head>
 <body>
@@ -335,6 +360,27 @@
 
 <script>
 const LISTINGS = [{"address":"1211 Musket Ct NE, Leesburg, VA, 20176","price":725000,"distance_miles":1.4,"beds":4,"baths":3,"sqft":3064,"year_built":1988,"days_on_mls":5,"hoa_fee":54,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/1211-Musket-Ct-NE_Leesburg_VA_20176_M60014-98732","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-27 14:01:35","price_per_sqft":237,"photo":"https://ap.rdcpix.com/24f70dc03dd583a901fe0d0f638457e5l-m3840923357od-w480_h360_x2.webp?w=1080&q=75"},{"address":"1226 Barksdale Dr NE, Leesburg, VA, 20176","price":899900,"distance_miles":1.7,"beds":4,"baths":2,"sqft":2944,"year_built":1999,"days_on_mls":6,"hoa_fee":68,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/1226-Barksdale-Dr-NE_Leesburg_VA_20176_M58670-05945","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-26 12:21:11","price_per_sqft":306,"photo":"https://ap.rdcpix.com/005e2e04cd38ce613b825d9326043dbfl-m294913248od-w480_h360_x2.webp?w=1080&q=75"},{"address":"905 Tuscarora Dr SW, Leesburg, VA, 20175","price":749900,"distance_miles":1.2,"beds":4,"baths":3,"sqft":2084,"year_built":1965,"days_on_mls":7,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/905-Tuscarora-Dr-SW_Leesburg_VA_20175_M52255-03560","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-25 13:35:14","price_per_sqft":360,"photo":"https://ap.rdcpix.com/361f5329b2ea75ec882a6ae6dca4785dl-m1772396447od-w480_h360_x2.webp?w=1080&q=75"},{"address":"608 Diskin Pl SW, Leesburg, VA, 20175","price":989000,"distance_miles":2.7,"beds":4,"baths":3,"sqft":3724,"year_built":1996,"days_on_mls":17,"hoa_fee":89,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/608-Diskin-Pl-SW_Leesburg_VA_20175_M67234-45537","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-15 06:24:09","price_per_sqft":266,"photo":"https://ap.rdcpix.com/f207216258715be1094819f90c0d1fd8l-m1550368135od-w480_h360_x2.webp?w=1080&q=75"},{"address":"224 Lawford Dr SW, Leesburg, VA, 20175","price":885000,"distance_miles":2.1,"beds":4,"baths":3,"sqft":3190,"year_built":1997,"days_on_mls":27,"hoa_fee":65,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/224-Lawford-Dr-SW_Leesburg_VA_20175_M53694-61896","source":"realtor.com","status":"FOR_SALE","list_date":"2026-03-05 17:25:47","price_per_sqft":277,"photo":"https://ap.rdcpix.com/6f250dcab3f281251fe31dfe564c7eeel-m585935429od-w480_h360_x2.webp?w=1080&q=75"},{"address":"212 Masons Ln SE, Leesburg, VA, 20175","price":725000,"distance_miles":2.2,"beds":2,"baths":2,"sqft":1878,"year_built":1960,"days_on_mls":38,"hoa_fee":0,"new_construction":false,"url":"https://www.realtor.com/realestateandhomes-detail/212-Masons-Ln-SE_Leesburg_VA_20175_M57995-09803","source":"realtor.com","status":"FOR_SALE","list_date":"2026-02-21 23:15:50","price_per_sqft":386,"photo":"https://ap.rdcpix.com/9f9964d81426c3724e5fd8ab7830f385l-m536367976od-w480_h360_x2.webp?w=1080&q=75"}];
+
+// ── Mortgage Calculator ───────────────────────────────────────
+function calcMortgage(price, hoaFee) {
+  const RATE = 0.0655, DOWN = 0.20, MONTHS = 360;
+  const TAX_RATE = 0.0104, INSURANCE = 200, MAINT = 0.01 / 12;
+  const loan = price * (1 - DOWN);
+  const r = RATE / 12;
+  const pi = loan * (r * Math.pow(1+r,MONTHS)) / (Math.pow(1+r,MONTHS)-1);
+  const tax = (price * TAX_RATE) / 12;
+  const maint = price * MAINT;
+  const hoa = hoaFee || 0;
+  return {
+    down: Math.round(price * DOWN),
+    loan: Math.round(loan),
+    pi: Math.round(pi),
+    total: Math.round(pi + tax + INSURANCE + maint + hoa),
+    tax: Math.round(tax),
+    maint: Math.round(maint),
+    hoa
+  };
+}
 const STORAGE_KEY = 'amy_liked_v2';
 
 let queue = [];
@@ -383,12 +429,23 @@ function makeCard(listing, zIndex) {
     .map(t => t.startsWith('<') ? t : `<span class="tag">${t}</span>`)
     .join('');
 
+  const m = calcMortgage(listing.price, listing.hoa_fee);
+  const distLine = listing.distance_miles != null ? `🗺 ${listing.distance_miles} mi from Old Town` : '';
+
   div.innerHTML = `
     ${photo}
     <div class="card-info">
       <div class="card-price">${formatPrice(listing.price)}</div>
       <div class="card-address">📍 ${listing.address}</div>
       <div class="card-tags">${tags}</div>
+      <div class="card-mortgage">
+        ${distLine ? `<div class="mort-row">📍 ${distLine}</div>` : ''}
+        <div class="mort-row">⬇️ Down (20%): <b>$${m.down.toLocaleString()}</b></div>
+        <div class="mort-row">🏦 Loan: $${m.loan.toLocaleString()}</div>
+        <div class="mort-row">📅 Est. Monthly (P&I): ~$${m.pi.toLocaleString()}/mo</div>
+        <div class="mort-row highlight">💵 Real Monthly: ~$${m.total.toLocaleString()}/mo</div>
+        <div class="mort-detail">(P&I $${m.pi} + tax $${m.tax} + ins $${m.insurance || 200} + maint $${m.maint}${m.hoa ? ` + HOA $${m.hoa}` : ''})</div>
+      </div>
     </div>
     <div class="stamp like">SAVE ♥</div>
     <div class="stamp nope">SKIP ✗</div>
@@ -533,6 +590,7 @@ function renderLiked() {
       l.sqft  ? `${l.sqft.toLocaleString()} sqft` : '',
       l.year_built ? `Built ${l.year_built}` : '',
     ].filter(Boolean).join(' · ');
+    const lm = calcMortgage(l.price, l.hoa_fee);
 
     return `
       <div class="liked-card">
@@ -541,6 +599,7 @@ function renderLiked() {
           <div class="liked-price">${formatPrice(l.price)}</div>
           <div class="liked-addr">${l.address}</div>
           <div class="liked-meta">${meta}</div>
+          <div class="liked-meta">⬇️ $${lm.down.toLocaleString()} down · 💵 ~$${lm.total.toLocaleString()}/mo</div>
           <a class="liked-link" href="${l.url}" target="_blank">View listing →</a>
         </div>
       </div>
