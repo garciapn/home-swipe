@@ -1,0 +1,43 @@
+name: Daily Home Scrape
+
+on:
+  schedule:
+    - cron: '0 11 * * *'  # 11 UTC = 6 AM ET (daylight-saving shifts to 7 AM EST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        run: python scripts/scrape.py
+
+      - name: Commit updated listings
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/listings.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: daily listings refresh [skip ci]"
+            git push
+          fi
