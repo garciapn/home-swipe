@@ -1,13 +1,13 @@
-"""Daily scraper: realtor.com + Zillow + Redfin for Leesburg VA SFH $500K-$1M.
+"""Daily scraper: Realtor.com for Leesburg VA single-family homes $500K-$1M.
 
-Dedupes across sources, computes distance to Church & King St in historic
-downtown Leesburg, and writes data/listings.json consumed by index.html.
+Dedupes by MLS ID then address, computes distance to Church & King St in
+historic downtown Leesburg, and writes data/listings.json consumed by
+index.html.
 """
 from __future__ import annotations
 
 import json
 import math
-import os
 import sys
 from datetime import date
 from pathlib import Path
@@ -15,15 +15,15 @@ from pathlib import Path
 import pandas as pd
 from homeharvest import scrape_property
 
-# Historic downtown Leesburg — intersection of Church St NE and King St N.
+# Historic downtown Leesburg — Church St NE × King St N.
 ANCHOR_LAT = 39.1157
 ANCHOR_LON = -77.5636
 
 LOCATION = "Leesburg, VA"
 MIN_PRICE = 500_000
 MAX_PRICE = 1_000_000
-SITES = ["realtor.com", "zillow", "redfin"]
 PAST_DAYS = 90
+MAX_RESULTS = 500
 
 OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "listings.json"
 
@@ -37,65 +37,57 @@ def haversine_miles(lat1: float, lon1: float, lat2: float, lon2: float) -> float
     return 2 * R * math.asin(math.sqrt(a))
 
 
-def scrape_all() -> pd.DataFrame:
-    frames = []
-    for site in SITES:
-        try:
-            df = scrape_property(
-                location=LOCATION,
-                listing_type="for_sale",
-                site_name=site,
-                past_days=PAST_DAYS,
-            )
-            if df is not None and len(df):
-                df["_source"] = site
-                frames.append(df)
-                print(f"[{site}] {len(df)} listings", file=sys.stderr)
-        except Exception as exc:
-            print(f"[{site}] failed: {exc}", file=sys.stderr)
-    if not frames:
-        return pd.DataFrame()
-    return pd.concat(frames, ignore_index=True)
-
-
-def filter_sfh_in_price(df: pd.DataFrame) -> pd.DataFrame:
-    if df.empty:
-        return df
-    df = df.copy()
-    df["price"] = pd.to_numeric(df.get("list_price"), errors="coerce")
-    if "style" in df.columns:
-        is_sfh = df["style"].fillna("").str.upper().str.contains("SINGLE")
-    else:
-        is_sfh = pd.Series([True] * len(df))
-    mask = is_sfh & df["price"].between(MIN_PRICE, MAX_PRICE)
-    return df[mask].reset_index(drop=True)
+def scrape() -> pd.DataFrame:
+    df = scrape_property(
+        location=LOCATION,
+        listing_type="for_sale",
+        property_type=["single_family"],
+        price_min=MIN_PRICE,
+        price_max=MAX_PRICE,
+        past_days=PAST_DAYS,
+        mls_only=False,
+        extra_property_data=True,
+        exclude_pending=True,
+        limit=MAX_RESULTS,
+    )
+    print(f"scraped: {0 if df is None else len(df)}", file=sys.stderr)
+    return df if df is not None else pd.DataFrame()
 
 
 def dedupe(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty:
         return df
+    before = len(df)
     if "mls_id" in df.columns:
-        with_mls = df.dropna(subset=["mls_id"]).drop_duplicates(subset=["mls_id"], keep="first")
-        without_mls = df[df["mls_id"].isna()]
-    else:
-        with_mls = df.iloc[0:0]
-        without_mls = df
-    if "full_street_line" in without_mls.columns:
-        without_mls = without_mls.drop_duplicates(subset=["full_street_line"], keep="first")
-    return pd.concat([with_mls, without_mls], ignore_index=True)
+        df = df.sort_values(by="list_date", na_position="last").drop_duplicates(
+            subset=["mls_id"], keep="first"
+        )
+    if "full_street_line" in df.columns:
+        df = df.drop_duplicates(subset=["full_street_line"], keep="first")
+    if "property_url" in df.columns:
+        df = df.drop_duplicates(subset=["property_url"], keep="first")
+    print(f"after dedupe: {len(df)} (removed {before - len(df)})", file=sys.stderr)
+    return df.reset_index(drop=True)
+
+
+def _num(value, caster=float):
+    if value is None or (isinstance(value, float) and pd.isna(value)):
+        return None
+    try:
+        return caster(value)
+    except (TypeError, ValueError):
+        return None
 
 
 def to_listing(row: pd.Series) -> dict:
-    def g(k, default=None):
-        v = row.get(k, default)
-        if pd.isna(v):
-            return default
-        return v
+    def g(key, default=None):
+        v = row.get(key, default)
+        return default if (v is None or (isinstance(v, float) and pd.isna(v))) else v
 
-    lat = g("latitude")
-    lon = g("longitude")
+    lat = _num(g("latitude"))
+    lon = _num(g("longitude"))
     distance = (
-        round(haversine_miles(ANCHOR_LAT, ANCHOR_LON, float(lat), float(lon)), 2)
+        round(haversine_miles(ANCHOR_LAT, ANCHOR_LON, lat, lon), 2)
         if lat is not None and lon is not None
         else None
     )
@@ -112,8 +104,8 @@ def to_listing(row: pd.Series) -> dict:
     if isinstance(alt_photos, str):
         alt_photos = [p.strip() for p in alt_photos.split(",") if p.strip()]
 
-    price = int(g("list_price")) if g("list_price") is not None else None
-    est_value = int(g("estimated_value")) if g("estimated_value") is not None else None
+    price = _num(g("list_price"), int)
+    est_value = _num(g("estimated_value"), int)
     value_score = None
     if price and est_value:
         value_score = round((est_value - price) / est_value * 100, 1)
@@ -122,25 +114,25 @@ def to_listing(row: pd.Series) -> dict:
         "address": address,
         "price": price,
         "distance_miles": distance,
-        "beds": int(g("beds")) if g("beds") is not None else None,
-        "baths": float(g("full_baths")) if g("full_baths") is not None else None,
-        "half_baths": int(g("half_baths")) if g("half_baths") is not None else None,
-        "sqft": int(g("sqft")) if g("sqft") is not None else None,
-        "lot_sqft": int(g("lot_sqft")) if g("lot_sqft") is not None else None,
-        "year_built": int(g("year_built")) if g("year_built") is not None else None,
-        "stories": int(g("stories")) if g("stories") is not None else None,
-        "garage": int(g("parking_garage")) if g("parking_garage") is not None else None,
-        "days_on_mls": int(g("days_on_mls")) if g("days_on_mls") is not None else None,
-        "hoa_fee": int(g("hoa_fee")) if g("hoa_fee") is not None else None,
+        "beds": _num(g("beds"), int),
+        "baths": _num(g("full_baths"), float),
+        "half_baths": _num(g("half_baths"), int),
+        "sqft": _num(g("sqft"), int),
+        "lot_sqft": _num(g("lot_sqft"), int),
+        "year_built": _num(g("year_built"), int),
+        "stories": _num(g("stories"), int),
+        "garage": _num(g("parking_garage"), int),
+        "days_on_mls": _num(g("days_on_mls"), int),
+        "hoa_fee": _num(g("hoa_fee"), int),
         "new_construction": bool(g("new_construction")) if g("new_construction") is not None else None,
         "url": g("property_url"),
-        "source": g("_source"),
+        "source": "realtor.com",
         "status": g("status"),
         "list_date": str(g("list_date")) if g("list_date") is not None else None,
-        "price_per_sqft": int(g("price_per_sqft")) if g("price_per_sqft") is not None else None,
+        "price_per_sqft": _num(g("price_per_sqft"), int),
         "estimated_value": est_value,
         "value_score": value_score,
-        "last_sold_price": int(g("last_sold_price")) if g("last_sold_price") is not None else None,
+        "last_sold_price": _num(g("last_sold_price"), int),
         "last_sold_date": str(g("last_sold_date")) if g("last_sold_date") is not None else None,
         "photo": g("primary_photo"),
         "alt_photos": alt_photos,
@@ -154,18 +146,14 @@ def rank(listing: dict) -> float:
     distance = listing.get("distance_miles")
     value_score = listing.get("value_score") or 0
     days = listing.get("days_on_mls") or 0
-    distance_penalty = (distance or 10) * 2
+    distance_penalty = (distance if distance is not None else 10) * 2
     freshness_bonus = max(0, 30 - days) * 0.2
     return value_score + freshness_bonus - distance_penalty
 
 
 def main() -> int:
-    df = scrape_all()
-    print(f"scraped: {len(df)}", file=sys.stderr)
-    df = filter_sfh_in_price(df)
-    print(f"after SFH + price filter: {len(df)}", file=sys.stderr)
+    df = scrape()
     df = dedupe(df)
-    print(f"after dedupe: {len(df)}", file=sys.stderr)
     if df.empty:
         print("no listings found — leaving existing data untouched", file=sys.stderr)
         return 1
@@ -184,7 +172,7 @@ def main() -> int:
             "min_price": MIN_PRICE,
             "max_price": MAX_PRICE,
             "type": "single_family",
-            "sources": SITES,
+            "past_days": PAST_DAYS,
         },
         "count": len(listings),
         "listings": listings,
