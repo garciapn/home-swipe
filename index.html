@@ -5,112 +5,160 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>🏘️ Grove Street Estates</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Share+Tech+Mono&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap");
+
+  :root {
+    --bg: #0c0b0a;
+    --bg-2: #16140f;
+    --surface: #1a1713;
+    --surface-2: #221d17;
+    --gold: #c9a961;
+    --gold-bright: #e8c877;
+    --gold-soft: rgba(201, 169, 97, 0.18);
+    --gold-hair: rgba(201, 169, 97, 0.25);
+    --ivory: #ede6d6;
+    --cream: #c8c0ae;
+    --muted: #8a8578;
+    --dim: #5a564d;
+    --sage: #9cb597;
+    --burgundy: #b87b7b;
+  }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
   body {
-    font-family: 'Share Tech Mono', monospace;
-    background: #0a0a0a;
-    border-top: 3px solid #ff6b00;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 300;
+    background:
+      radial-gradient(ellipse at top, #1a1612 0%, var(--bg) 55%) fixed,
+      var(--bg);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 16px;
-    color: #e0e0e0;
+    padding: 36px 16px 48px;
+    color: var(--ivory);
+    -webkit-font-smoothing: antialiased;
   }
+
+  /* ── Header ── */
   header {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+    position: relative;
   }
+  header::before,
+  header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 48px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-hair), transparent);
+  }
+  header::before { left: -68px; }
+  header::after  { right: -68px; }
   header h1 {
-    font-family: 'Oswald', Impact, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #ff6b00;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 12px rgba(255,107,0,0.5);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--ivory);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
   }
-  header p { color: #888; font-size: 0.82rem; margin-top: 6px; letter-spacing: 1px; }
+  header h1 .gold {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  header p {
+    color: var(--muted);
+    font-size: 0.72rem;
+    margin-top: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
 
   /* ── Deck ── */
   #deck {
     position: relative;
     width: 100%;
     max-width: 380px;
-    height: 560px;
-    margin-bottom: 24px;
+    height: 580px;
+    margin-bottom: 28px;
   }
-
   .card {
     position: absolute;
     inset: 0;
-    border-radius: 4px;
+    border-radius: 2px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    background: var(--surface);
+    border: 1px solid var(--gold-hair);
+    box-shadow:
+      0 1px 0 rgba(201, 169, 97, 0.08) inset,
+      0 30px 80px rgba(0, 0, 0, 0.7),
+      0 10px 24px rgba(0, 0, 0, 0.4);
     cursor: grab;
     user-select: none;
-    transition: transform 0.1s;
-    background: #141414;
-    border: 1px solid #ff6b00;
+    transition: transform 0.1s, box-shadow 0.25s;
   }
   .card:hover {
-    box-shadow: 0 0 24px rgba(255,107,0,0.4), 0 20px 60px rgba(0,0,0,0.8);
+    box-shadow:
+      0 1px 0 rgba(201, 169, 97, 0.14) inset,
+      0 30px 80px rgba(0, 0, 0, 0.75),
+      0 0 0 1px rgba(201, 169, 97, 0.35);
   }
   .card:active { cursor: grabbing; }
-  .card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0,0,0,0.08) 2px,
-      rgba(0,0,0,0.08) 4px
-    );
-    pointer-events: none;
-    z-index: 10;
-  }
 
   .card-photo {
     width: 100%;
-    height: 62%;
+    height: 58%;
     object-fit: cover;
     display: block;
-    background: #141414;
+    background: var(--surface);
   }
   .card-no-photo {
     width: 100%;
-    height: 62%;
+    height: 58%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 5rem;
-    background: linear-gradient(135deg, #1a1a1a, #141414);
+    font-size: 4rem;
+    color: var(--gold-soft);
+    background: linear-gradient(135deg, var(--surface-2), var(--surface));
   }
 
   .card-info {
-    padding: 16px;
+    padding: 20px 22px 22px;
+    position: relative;
+  }
+  .card-info::before {
+    content: '';
+    position: absolute;
+    left: 22px; right: 22px; top: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-hair), transparent);
   }
   .card-price {
-    font-family: 'Oswald', Impact, sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
     font-size: 1.9rem;
-    font-weight: 700;
-    color: #ff6b00;
-    text-shadow: 0 0 8px rgba(255,107,0,0.4);
-    letter-spacing: 1px;
+    color: var(--gold);
+    letter-spacing: 0.01em;
+    line-height: 1;
   }
   .card-address {
-    font-size: 0.82rem;
-    color: #bbb;
-    margin: 4px 0 10px;
+    font-size: 0.78rem;
+    color: var(--cream);
+    margin: 8px 0 14px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05em;
+    font-weight: 400;
   }
   .card-tags {
     display: flex;
@@ -118,244 +166,276 @@
     gap: 6px;
   }
   .tag {
-    background: rgba(255,107,0,0.08);
-    border: 1px solid rgba(255,107,0,0.3);
-    border-radius: 2px;
-    padding: 3px 8px;
-    font-size: 0.76rem;
-    color: #ccc;
-    font-family: 'Share Tech Mono', monospace;
+    background: transparent;
+    border: 1px solid var(--gold-hair);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.68rem;
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.12em;
   }
-  .tag.green { background: rgba(57,255,20,0.08); border-color: rgba(57,255,20,0.4); color: #39ff14; }
-  .tag.yellow { background: rgba(255,200,0,0.08); border-color: rgba(255,200,0,0.3); color: #ffd700; }
-  .tag.red { background: rgba(204,0,0,0.15); border-color: rgba(204,0,0,0.5); color: #ff4444; }
+  .tag.green  { color: var(--sage);     border-color: rgba(156, 181, 151, 0.4); }
+  .tag.yellow { color: var(--gold-bright); border-color: rgba(232, 200, 119, 0.4); }
+  .tag.red    { color: var(--burgundy); border-color: rgba(184, 123, 123, 0.4); }
 
   /* Swipe indicators */
   .stamp {
     position: absolute;
-    top: 30px;
-    padding: 8px 18px;
-    border-radius: 2px;
-    font-family: 'Oswald', Impact, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    top: 32px;
+    padding: 10px 20px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.1s;
-    border: 4px solid;
-    transform: rotate(-15deg);
+    border: 1px solid;
+    border-radius: 2px;
+    background: rgba(12, 11, 10, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
-  .stamp.like  {
-    right: 20px;
-    color: #39ff14;
-    border-color: #39ff14;
-    text-shadow: 0 0 12px #39ff14;
-    box-shadow: 0 0 16px rgba(57,255,20,0.3);
-    transform: rotate(-15deg);
+  .stamp.like {
+    right: 24px;
+    color: var(--sage);
+    border-color: var(--sage);
+    transform: rotate(-10deg);
   }
-  .stamp.nope  {
-    left: 20px;
-    color: #cc0000;
-    border-color: #cc0000;
-    text-shadow: 0 0 12px #cc0000;
-    box-shadow: 0 0 16px rgba(204,0,0,0.3);
-    transform: rotate(15deg);
+  .stamp.nope {
+    left: 24px;
+    color: var(--burgundy);
+    border-color: var(--burgundy);
+    transform: rotate(10deg);
   }
 
   /* ── Buttons ── */
   .buttons {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     justify-content: center;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
   }
   .btn {
-    width: 64px; height: 64px;
-    border-radius: 3px;
-    border: 2px solid transparent;
-    font-size: 1.6rem;
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-hair);
+    background: var(--surface);
+    color: var(--ivory);
+    font-size: 1.15rem;
     cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.15s;
+    transition: transform 0.2s ease, border-color 0.2s, background 0.2s;
     display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   }
-  .btn:hover { transform: scale(1.12); }
-  .btn.skip  {
-    background: #1a0000;
-    border-color: #cc0000;
-    color: #cc0000;
-    box-shadow: 0 4px 16px rgba(204,0,0,0.3);
-  }
-  .btn.skip:hover { box-shadow: 0 0 20px rgba(204,0,0,0.6); }
-  .btn.like  {
-    background: #001a00;
-    border-color: #39ff14;
-    color: #39ff14;
-    box-shadow: 0 4px 16px rgba(57,255,20,0.3);
-  }
-  .btn.like:hover { box-shadow: 0 0 20px rgba(57,255,20,0.6); }
-  .btn.info  {
-    background: #1a0d00;
-    border-color: #ff6b00;
-    color: #ff6b00;
-    box-shadow: 0 4px 16px rgba(255,107,0,0.3);
-    font-size: 1.2rem;
-  }
-  .btn.info:hover { box-shadow: 0 0 20px rgba(255,107,0,0.6); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.skip:hover  { border-color: var(--burgundy); color: var(--burgundy); }
+  .btn.like:hover  { border-color: var(--sage);     color: var(--sage); }
+  .btn.info        { border-color: var(--gold);     color: var(--gold); background: transparent; }
+  .btn.info:hover  { background: var(--gold-soft); }
 
   /* ── Counter ── */
   #counter {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.82rem;
-    color: #ff6b00;
-    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    color: var(--muted);
+    margin-bottom: 28px;
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
+    font-weight: 400;
   }
 
   /* ── Liked section ── */
   #liked-section {
     width: 100%;
-    max-width: 420px;
+    max-width: 440px;
     margin-top: 8px;
   }
   #liked-section h2 {
-    font-family: 'Oswald', Impact, sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
     font-size: 1.1rem;
-    font-weight: 700;
-    color: #39ff14;
-    text-shadow: 0 0 10px rgba(57,255,20,0.5);
-    margin-bottom: 12px;
+    font-weight: 400;
+    color: var(--gold);
+    margin-bottom: 18px;
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.05em;
+    position: relative;
+    padding-bottom: 14px;
+  }
+  #liked-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%; bottom: 0;
+    transform: translateX(-50%);
+    width: 32px; height: 1px;
+    background: var(--gold-hair);
   }
   .liked-card {
-    background: #141414;
-    border: 1px solid #ff6b00;
-    border-radius: 3px;
-    padding: 14px;
-    margin-bottom: 10px;
+    background: var(--surface);
+    border: 1px solid var(--gold-hair);
+    border-radius: 2px;
+    padding: 16px;
+    margin-bottom: 12px;
     display: flex;
-    gap: 12px;
+    gap: 14px;
     align-items: center;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .liked-card:hover {
+    border-color: rgba(201, 169, 97, 0.5);
+    transform: translateY(-1px);
   }
   .liked-thumb {
-    width: 60px; height: 60px;
+    width: 64px; height: 64px;
     border-radius: 2px;
     object-fit: cover;
     flex-shrink: 0;
-    background: #1a1a1a;
-    border: 1px solid rgba(255,107,0,0.3);
+    background: var(--surface-2);
+    border: 1px solid var(--gold-hair);
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--gold-soft);
+    overflow: hidden;
   }
-  .liked-thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
+  .liked-thumb img { width: 100%; height: 100%; object-fit: cover; }
   .liked-info { flex: 1; min-width: 0; }
   .liked-price {
-    font-family: 'Oswald', Impact, sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #ff6b00;
-    letter-spacing: 1px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--gold);
+    letter-spacing: 0.01em;
   }
-  .liked-addr  { font-size: 0.76rem; color: #aaa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.5px; }
-  .liked-meta  { font-size: 0.73rem; color: #666; margin-top: 2px; }
-  .liked-link  { color: #39ff14; text-decoration: none; font-size: 0.78rem; letter-spacing: 0.5px; }
-  .liked-link:hover { text-shadow: 0 0 8px rgba(57,255,20,0.6); }
+  .liked-addr {
+    font-size: 0.74rem;
+    color: var(--cream);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.03em;
+    margin-top: 2px;
+  }
+  .liked-meta { font-size: 0.68rem; color: var(--muted); margin-top: 2px; letter-spacing: 0.04em; }
+  .liked-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: inline-block;
+    border-bottom: 1px solid var(--gold-hair);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .liked-link:hover { color: var(--gold-bright); border-color: var(--gold-bright); }
 
   /* Done state */
   #done {
     display: none;
     text-align: center;
-    padding: 40px 20px;
+    padding: 56px 24px;
   }
   #done h2 {
-    font-family: 'Oswald', Impact, sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #ff6b00;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 0 0 16px rgba(255,107,0,0.6);
-    margin-bottom: 8px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
   }
-  #done p  { color: #666; font-size: 0.85rem; letter-spacing: 1px; }
+  #done p {
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
   #restart-btn {
-    margin-top: 16px;
-    padding: 10px 28px;
+    margin-top: 24px;
+    padding: 12px 32px;
     background: transparent;
-    border: 2px solid #ff6b00;
+    border: 1px solid var(--gold);
     border-radius: 2px;
-    color: #ff6b00;
-    font-family: 'Oswald', Impact, sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 2px;
+    color: var(--gold);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     cursor: pointer;
-    transition: box-shadow 0.15s, background 0.15s;
+    transition: background 0.25s, color 0.25s;
   }
   #restart-btn:hover {
-    background: rgba(255,107,0,0.1);
-    box-shadow: 0 0 16px rgba(255,107,0,0.5);
+    background: var(--gold);
+    color: var(--bg);
   }
 
   /* ── Extra fields ── */
   .card-extra {
-    font-size: 0.74rem;
-    color: #888;
-    margin: 4px 0;
-    letter-spacing: 0.3px;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin: 8px 0 4px;
+    letter-spacing: 0.03em;
   }
   .card-desc {
-    font-size: 0.70rem;
-    color: #555;
-    margin-top: 6px;
-    line-height: 1.4;
-    border-top: 1px solid rgba(255,107,0,0.1);
-    padding-top: 6px;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.55;
+    padding-top: 10px;
+    font-style: italic;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    border-top: 1px solid var(--gold-hair);
   }
 
   /* ── Mortgage section ── */
   .card-mortgage {
-    margin-top: 10px;
-    padding-top: 8px;
-    border-top: 1px solid rgba(255,107,0,0.2);
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--gold-hair);
   }
   .mort-row {
-    font-size: 0.75rem;
-    color: #bbb;
-    margin-bottom: 2px;
-    letter-spacing: 0.3px;
+    font-size: 0.72rem;
+    color: var(--cream);
+    margin-bottom: 3px;
+    letter-spacing: 0.02em;
+    font-weight: 300;
   }
-  .mort-row b { color: #fff; }
+  .mort-row b { color: var(--ivory); font-weight: 500; }
   .mort-row.highlight {
-    color: #39ff14;
-    font-size: 0.82rem;
-    font-weight: bold;
-    text-shadow: 0 0 6px rgba(57,255,20,0.4);
+    color: var(--gold-bright);
+    font-size: 0.78rem;
+    font-weight: 500;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: 0.03em;
+    margin-top: 3px;
   }
   .mort-detail {
-    font-size: 0.68rem;
-    color: #555;
-    margin-top: 2px;
+    font-size: 0.64rem;
+    color: var(--dim);
+    margin-top: 4px;
+    letter-spacing: 0.02em;
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🏘️ Grove Street Estates</h1>
-  <p>Leesburg VA · Niche A · Schools A- · ~46min DC · $500K–$1M SFH</p>
+  <h1>Grove Street <span class="gold">Estates</span></h1>
+  <p>Leesburg VA · A-Rated Schools · ~46min DC · $500K–$1M</p>
 </header>
 
 <div id="deck"></div>
@@ -368,13 +448,13 @@
 </div>
 
 <div id="done">
-  <h2>Mission Complete 💯</h2>
-  <p>You've seen all available homes.</p>
-  <button id="restart-btn" onclick="restart()">Run It Again</button>
+  <h2>Collection Complete</h2>
+  <p>You've viewed every available residence</p>
+  <button id="restart-btn" onclick="restart()">Browse Again</button>
 </div>
 
 <div id="liked-section">
-  <h2 id="liked-header" style="display:none">🟢 YOUR CREW'S SPOTS</h2>
+  <h2 id="liked-header" style="display:none">Saved Residences</h2>
   <div id="liked-list"></div>
 </div>
 
@@ -491,8 +571,8 @@ function makeCard(listing, zIndex) {
       </div>
       ${descHtml}
     </div>
-    <div class="stamp like">SAVE ♥</div>
-    <div class="stamp nope">SKIP ✗</div>
+    <div class="stamp like">Saved</div>
+    <div class="stamp nope">Pass</div>
   `;
 
   addDragHandlers(div, listing);
