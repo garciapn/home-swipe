@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28",
+  "generated_at": "2026-10-29",
   "anchor": {
     "lat": 39.1157,
     "lon": -77.5636,
@@ -12,7 +12,7 @@
     "type": "single_family",
     "past_days": 90
   },
-  "count": 33,
+  "count": 34,
   "listings": [
     {
       "address": "724 Valley View Ave SW, Leesburg, VA, 20175",
@@ -26,7 +26,7 @@
       "year_built": 1932,
       "stories": 2,
       "garage": null,
-      "days_on_mls": 3,
+      "days_on_mls": 5,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/724-Valley-View-Ave-SW_Leesburg_VA_20175_M67929-20595",
@@ -45,7 +45,7 @@
       "description": "COMING SOON! Great opportunity in a highly desirable in-town location. This distinctive Victorian home offers tremendous character and potential and is ready for its next chapter. The property needs significant renovation and is being offered strictly AS-IS. An excellent opportunity for an investor, renovator or buyer looking for a substantial project in a location that is difficult to replicate. Cash offers strongly preferred. Additional information will be available when the property becomes Active.",
       "agent_name": null,
       "mls_id": "VALO2139032",
-      "_rank": 22.72
+      "_rank": 22.32
     },
     {
       "address": "41025 Leesburg Overlook Ln, Leesburg, VA, 20176",
@@ -59,7 +59,7 @@
       "year_built": 1941,
       "stories": 2,
       "garage": 6,
-      "days_on_mls": 7,
+      "days_on_mls": 8,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/41025-Leesburg-Overlook-Ln_Leesburg_VA_20176_M54067-26769",
@@ -145,7 +145,7 @@
       "description": "No HOA. A storybook setting, a charming 1941 stone Colonial, and panoramic views overlooking historic Leesburg make this 2.58-acre property truly special. With its timeless architecture, inviting cottage charm, and distinctive character that simply cannot be replicated in new construction, this lovely home offers a rare blend of classic appeal and modern convenience, less than five minutes by car from downtown Leesburg. Set on a rise, the property features a circular driveway, beautiful landscaping, and a welcoming stone walkway leading to the front entry. Inside, hardwood floors and classic architectural details set the tone. Located at the rear of the home, the classic living room features a wood-burning fireplace, a bay window with a charming seating nook, and breathtaking panoramic views. The nicely updated kitchen features cherry cabinetry, granite countertops, and French doors opening to the deck, where the expansive vistas take center stage. Just off the kitchen's dining area, the family room features a striking stone wall and another set of double doors leading to the deck, creating a wonderful connection between indoor and outdoor living. A main level study features built in bookshelves, a powder room and a door to a beautiful stone terrace overlooking the surrounding landscape and views. A handy mud room is located on the main level with a side door for everyday use. Upstairs, three spacious bedrooms feature hardwood floors and lovely views. The primary bedroom enjoys an updated 2026 bath featuring and panoramic views. Two additional generously sized bedrooms share and nicely updated hall bath. The lower level features a recreation room with fireplace, an additional flex room with full bath and two utility rooms. The walk-out lower level opens to the level rear yard, offering ample room for play and outdoor enjoyment. Three 2- car detached garages provide exceptional versatility: an oversized garage with room for up to four vehicles and additional storage above, a second two-car garage conveniently located near the house, and a third garage ideal for gardening equipment, yard tools, and recreational toys. Beautiful landscaping and distinctive stonework enhance the property's appeal. Less than five minutes by car to historic downtown Leesburg, very close to the Dulles Greenway, and less than 30 minutes to Dulles International Airport, the location is as convenient as it is picturesque. Golf enthusiasts will appreciate being less than a two-minute drive from Beacon Hill's newly reopened golf course, where memberships are available, while equestrians will enjoy the proximity to Clairvaux LLC, an A-rated show barn in neighboring Beacon Hill. With public sewer and a private well, this remarkable property offers a wonderful blend of charm, privacy, and convenience. Whether envisioned as the perfect weekend retreat for enjoying all that Loudoun County has to offer, from dining, golf, and vineyards to equestrian events and shopping, or as a year-round home in which to create lasting memories, this is a rare opportunity to own a truly distinctive property. Charming, memorable, and one of a kind!",
       "agent_name": null,
       "mls_id": "VALO2138698",
-      "_rank": 13.72
+      "_rank": 13.52
     },
     {
       "address": "308 Whitehorse Ct SW, Leesburg, VA, 20175",
@@ -159,7 +159,7 @@
       "year_built": 1997,
       "stories": 2,
       "garage": 2,
-      "days_on_mls": 21,
+      "days_on_mls": 22,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/308-Whitehorse-Ct-SW_Leesburg_VA_20175_M55180-73553",
@@ -199,7 +199,7 @@
       "description": "Bring your vision to this single-family project home on a cul-de-sac in Leesburg, near the W&OD Trail and Foxridge Park, with no HOA! Offering three finished levels and an attached two-car garage, this property provides an opportunity to renovate and personalize. The kitchen features an island, granite countertops, and a tile backsplash. Hardwood floors, crown molding, chair rail accents, and a fireplace add character to the living spaces. A fenced backyard and storage shed offer additional outdoor space and convenience. The home needs repairs and updates and is being sold as-is. Explore the potential to transform this property into your next home or renovation project!",
       "agent_name": null,
       "mls_id": "VALO2137998",
-      "_rank": 11.44
+      "_rank": 11.24
     },
     {
       "address": "401 Crestwood St SW, Leesburg, VA, 20175",
@@ -213,7 +213,7 @@
       "year_built": 1978,
       "stories": 2,
       "garage": 2,
-      "days_on_mls": 13,
+      "days_on_mls": 14,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/401-Crestwood-St-SW_Leesburg_VA_20175_M69907-90889",
@@ -291,7 +291,7 @@
       "description": "Welcome to 401 Crestwood Drive, where nearly $350,000 has been invested to thoughtfully restore this home from top to bottom. Situated on a desirable corner lot with a large backyard and oversized garage, this is far more than a renovation. Major improvements include a new architectural shingle roof, James Hardie siding and exterior wrap, new windows, central HVAC with all-new ductwork, water heater, plumbing, electrical, recessed lighting, and Tesla charging station. Inside, you'll find a completely redesigned kitchen with new cabinetry, under-cabinet lighting, countertops and appliances, along with a new primary bath, secondary full bath and powder room. Mohawk laminate flooring flows throughout the home, complemented by beautiful oak stairs, while the primary suite features newly designed walk-in closets. A new 6-foot privacy fence completes the backyard and creates an exceptional outdoor space for entertaining, pets and everyday living. Best of all, you're just a short walk from Historic Downtown Leesburg, with its restaurants, coffee shops, boutiques, Farmers Market and year-round community events. A completely restored, turnkey home offering modern living, an established neighborhood and the Downtown Leesburg lifestyle. Certain photographs have been virtually staged. Virtually staged photos are intended to help buyers visualize the property's potential and may depict furnishings, decor, or finishes that are not present in the home.",
       "agent_name": null,
       "mls_id": "VALO2138444",
-      "_rank": 6.66
+      "_rank": 6.46
     },
     {
       "address": "419 Foxridge Dr SW, Leesburg, VA, 20175",
@@ -305,7 +305,7 @@
       "year_built": 1987,
       "stories": 3,
       "garage": 1,
-      "days_on_mls": 0,
+      "days_on_mls": 1,
       "hoa_fee": 102,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/419-Foxridge-Dr-SW_Leesburg_VA_20175_M66300-55496",
@@ -374,7 +374,7 @@
       "description": "Welcome to 419 Foxridge Drive, a beautifully refreshed 3 bedroom, 2.5 bath home offering over 2,300 square feet of comfortable living in the heart of Leesburg. The big ticket items have already been taken care of, so you can settle in with confidence! Step inside to gleaming refinished hardwood floors, fresh paint throughout, and brand new carpet. Soaring ceilings and bright, airy rooms offer plenty of space for everyday living and entertaining. Enjoy cooking in a newly updated kitchen with stylish appliances and new countertops. Upstairs you'll find a beautiful owner's retreat complete with private bathroom and walk in closet, in addition to two more spacious bedrooms and a full hall bathroom. The finished lower level offers numerous recreational, office, and workout spaces ready for your personal touch. New energy efficient windows installed in 2025 fill the home with natural light while helping keep utility costs in check. A new water heater (2025) and roof and gutters (2021) add even more peace of mind. Enjoy a convenient Leesburg location with easy access to Routes 7 and 15, the Dulles Greenway, and the W&OD Trail. Historic downtown Leesburg's shops, restaurants, and events are just minutes away, along with Leesburg Premium Outlets and nearby wineries. Updated, well maintained, and ready for its next owner. Schedule your showing today!",
       "agent_name": null,
       "mls_id": "VALO2139208",
-      "_rank": 5.62
+      "_rank": 5.42
     },
     {
       "address": "947 Rhonda Pl SE, Leesburg, VA, 20175",
@@ -388,7 +388,7 @@
       "year_built": 2001,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 4,
+      "days_on_mls": 5,
       "hoa_fee": 85,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/947-Rhonda-Pl-SE_Leesburg_VA_20175_M53349-18966",
@@ -429,7 +429,7 @@
       "description": "Welcome to 947 Rhonda Place in Desirable Kincaid Forest! Discover the perfect blend of timeless charm, spacious living, and thoughtful updates in this beautifully maintained, brick-front 4-bedroom, 3.5-bath home in sought-after Kincaid Forest in Leesburg. Featuring a classic, open traditional floor plan and inviting indoor and outdoor living spaces, this home offers room to relax, entertain, and enjoy everyday life. A grand two-story foyer welcomes you inside, opening to elegant formal living and dining rooms, along with a main-level office featuring French doors-ideal for working from home or enjoying a quiet retreat. The spacious kitchen and adjoining eat-in area flow seamlessly into the large family room, where a fireplace creates a warm and inviting gathering space. Enjoy views of the beautifully fenced backyard from the family room, or step outside to the composite deck and paver walkway, perfect for outdoor dining, entertaining, and relaxing. Upstairs, the generously sized primary suite offers a wonderful private retreat, complete with a separate sitting area that can also serve as a second office, reading nook, or personal sanctuary. Three additional bedrooms provide flexibility for family, guests, or additional workspace. The basement adds even more versatile living space, featuring a pellet stove for added warmth and comfort, along with abundant storage to keep everything organized. The charming, fenced backyard is a special highlight, backing to a running trail and offering a peaceful setting to enjoy the outdoors. Whether hosting friends on the deck, enjoying a quiet morning outside, or heading out for a walk or run, this home offers an appealing combination of comfort, privacy, and convenience. Residents can also enjoy the neighborhood's community pool, which buyers have the opportunity to join for even more summer fun and relaxation. Peace of mind comes with the home's meticulous maintenance and documented care. Significant improvements include a 50-year roof installed in 2018, replacement windows in 2007, and HVAC replacement in 2013. Fresh paint throughout and new carpeting in 2026 give the home a refreshed, move-in-ready feel. The owners have thoughtfully maintained records documenting the home's history and improvements. With its spacious floor plan, desirable neighborhood setting, inviting outdoor spaces, abundant storage, and well-documented maintenance, 947 Rhonda Place is a wonderful opportunity to enjoy the best of Leesburg living in Kincaid Forest.",
       "agent_name": null,
       "mls_id": "VALO2137156",
-      "_rank": 4.96
+      "_rank": 4.76
     },
     {
       "address": "431 S King St, Leesburg, VA, 20175",
@@ -443,7 +443,7 @@
       "year_built": 1870,
       "stories": 2,
       "garage": 1,
-      "days_on_mls": 40,
+      "days_on_mls": 41,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/431-S-King-St_Leesburg_VA_20175_M68399-07905",
@@ -539,7 +539,7 @@
       "year_built": 1920,
       "stories": 2,
       "garage": null,
-      "days_on_mls": 40,
+      "days_on_mls": 41,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/221-South-St-SE_Leesburg_VA_20175_M55711-18917",
@@ -615,7 +615,7 @@
       "year_built": 1962,
       "stories": 2,
       "garage": null,
-      "days_on_mls": 0,
+      "days_on_mls": 1,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/311-Edwards-Ferry-Rd-NE_Leesburg_VA_20176_M69533-13243",
@@ -627,14 +627,29 @@
       "value_score": -3.9,
       "last_sold_price": 770000,
       "last_sold_date": "2025-07-31 00:00:00",
-      "photo": "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m1362242323od-w480_h360_x2.webp?w=1080&q=75",
+      "photo": "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m2564260255od-w480_h360_x2.webp?w=1080&q=75",
       "alt_photos": [
-        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m1362242323od-w480_h360_x2.webp?w=1080&q=75"
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m2564260255od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m4030443637od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m2565675777od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m3923784726od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m3769593426od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m2335778365od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m2811284258od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m52849500od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m205221692od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m1894303826od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m2395356895od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m1689974547od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m1756752961od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m2978267806od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m2851202440od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/6686bfa86de789dab1b0c6a2a6bbb906l-m1496100520od-w480_h360_x2.webp?w=1080&q=75"
       ],
       "description": "A Rare Opportunity in the Heart of Leesburg Never before introduced to the open market, 311 Edwards Ferry Road presents a rare opportunity to enjoy the charm of an established neighborhood and the convenience of a walkable lifestyle just moments from Historic Downtown Leesburg. Built in 1962, this beautifully maintained brick rambler offers the ease of main-level living, three bedrooms, three full bathrooms, and a freshly painted, neutral interior that is move-in ready. Mature trees, established landscaping, a renovated brick walkway, and a lovely fenced backyard add to the home's timeless appeal. Imagine morning strolls to your favorite coffee shop, afternoons exploring downtown boutiques, and evenings enjoying Leesburg's wonderful restaurants. With seasonal festivals, farmers markets, and a vibrant community just a short walk away, this special location offers an exceptional way of life. A rare opportunity to enjoy the character of an established Leesburg neighborhood, the simplicity of main-level living, and the charm of Historic Downtown just beyond your doorstep.",
       "agent_name": null,
       "mls_id": "VALO2139102",
-      "_rank": 1.12
+      "_rank": 0.92
     },
     {
       "address": "219 Foxborough Dr SW, Leesburg, VA, 20175",
@@ -648,7 +663,7 @@
       "year_built": 1994,
       "stories": 2,
       "garage": 2,
-      "days_on_mls": 71,
+      "days_on_mls": 72,
       "hoa_fee": 45,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/219-Foxborough-Dr-SW_Leesburg_VA_20175_M63669-22266",
@@ -775,7 +790,7 @@
       "year_built": 2001,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 63,
+      "days_on_mls": 64,
       "hoa_fee": 88,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/104-Alpine-Dr-SE_Leesburg_VA_20175_M51839-80893",
@@ -800,8 +815,8 @@
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m1267383226od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m1510824590od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m2764634248od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m3987616838od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m1733589552od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m3987616838od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m2966001996od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m2689974280od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m3585049832od-w480_h360_x2.webp?w=1080&q=75",
@@ -820,14 +835,15 @@
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m1468867733od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m621229346od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m1468867733od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m1204047391od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m621229346od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m3716120152od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m621229346od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m3723019732od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m1802304800od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m573653804od-w480_h360_x2.webp?w=1080&q=75"
+        "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m2245063482od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m573653804od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/41675c6118e25ad1f631c4913ab03a9al-m1348845194od-w480_h360_x2.webp?w=1080&q=75"
       ],
-      "description": "Welcome to this spacious 5 bedroom home with additional lower level-bonus room that can be used as a 6th bedroom with 2 walking closets and full bath. It is ideally located in Leesburg close to schools, shopping, restaurants, and major commuter routes, including the Dulles Greenway , Route 7, and Route 15. This well maintained home has been thoughtfully updated and is ready for its new owners. The entire interior has been freshly painted, and the beautiful hardwood floors throughout the main living areas has been refinished. The basement features brand-new carpeting, providing a fresh and comfortable additional living space. Outside, enjoy a newly built deck, completed in August 2026, along with freshly painted fencing. The garage has also been refreshed with newly painted walls and floor. Major improvement provide added peace of mind, including a new sewer line August 2026, a roof replaced 2018, a water heater and water pump replaced in 2022, HAVC replaced in 2025, new kitchen faucet and GE double deck wall oven Oct 2026. With generous living space, numerous recent updates, and easy access to everything Leesburg has to offer, this home is truly move-in ready. Do not miss the opportunity to make this home yours. \"Please note: The property is currently vacant and listing photos have been virtually staged. Furniture and decor shown are digitally added.\"",
+      "description": "Welcome to this spacious 5 bedroom home with additional lower level-bonus room that can be used as a 6th bedroom with 2 walking closets and full bath. It is ideally located in Leesburg close to schools, shopping, restaurants, and major commuter routes, including the Dulles Greenway , Route 7, and Route 15. This well maintained home has been thoughtfully updated and is ready for its new owners. The entire interior has been freshly painted, and the beautiful hardwood floors throughout the main living areas has been refinished. The basement features brand-new carpeting, providing a fresh and comfortable additional living space. Outside, enjoy a newly built deck, completed in August 2026, along with freshly painted fencing. The garage has also been refreshed with newly painted walls and floor. Major improvement provide added peace of mind, including a new sewer line August 2026, a roof replaced 2018, a water heater and water pump replaced in 2022, HAVC replaced in 2025, new kitchen faucet, GE double deck wall oven and, and new GE cooktop, Oct 2026. With generous living space, numerous recent updates, and easy access to everything Leesburg has to offer, this home is truly move-in ready. Do not miss the opportunity to make this home yours. \"Please note: The property is currently vacant and listing photos have been virtually staged. Furniture and decor shown are digitally added.\"",
       "agent_name": null,
       "mls_id": "VALO2134578",
       "_rank": 0.22
@@ -844,7 +860,7 @@
       "year_built": 1988,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 44,
+      "days_on_mls": 45,
       "hoa_fee": 69,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/1208-Musket-Ct-NE_Leesburg_VA_20176_M66837-08151",
@@ -897,6 +913,84 @@
       "_rank": -0.54
     },
     {
+      "address": "704 Evard Ct SW, Leesburg, VA, 20175",
+      "price": 825000,
+      "distance_miles": 1.31,
+      "beds": 3,
+      "baths": 3.0,
+      "half_baths": 1,
+      "sqft": 2976,
+      "lot_sqft": 7405,
+      "year_built": 1986,
+      "stories": 3,
+      "garage": 2,
+      "days_on_mls": 0,
+      "hoa_fee": 28,
+      "new_construction": false,
+      "url": "https://www.realtor.com/realestateandhomes-detail/704-Evard-Ct-SW_Leesburg_VA_20175_M54534-95526",
+      "source": "realtor.com",
+      "status": "FOR_SALE",
+      "list_date": "2026-10-29 13:17:08",
+      "price_per_sqft": 277,
+      "estimated_value": 792222,
+      "value_score": -4.1,
+      "last_sold_price": 556000,
+      "last_sold_date": "2020-11-30 00:00:00",
+      "photo": "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1972094147od-w480_h360_x2.webp?w=1080&q=75",
+      "alt_photos": [
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1972094147od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m4027123160od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m680976896od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m238363781od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3723517683od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1113479934od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3019482016od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3993981783od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3451396106od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3367182798od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1910024587od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1176556933od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1514006568od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m2107888874od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m2097596687od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3902750081od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3164380868od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m700652237od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1960583600od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1911383974od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1046826143od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1419147686od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m113590567od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m2330206295od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1191267685od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m244727114od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3879929336od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1920231736od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1098216486od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1176010999od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3674926563od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m324015111od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m116438191od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3550425817od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m107174182od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3879405588od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3977920027od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3743926139od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m2018938122od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m1051175065od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3068655778od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m2943657380od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m2605444292od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m860957171od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3245622346od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/3dd2cf69fade0af1f75aa46fcf30d995l-m3729869835od-w480_h360_x2.webp?w=1080&q=75"
+      ],
+      "description": "Tucked away on a quiet cul-de-sac in one of Leesburg's most charming and quaint neighborhoods, 704 Evard Court SW offers the perfect blend of warmth, character, thoughtful updates, and inviting indoor and outdoor living spaces. Surrounded by mature trees and beautifully maintained homes, this picturesque setting has a welcoming, tucked-away feel while remaining just minutes from everything Leesburg has to offer. Offering approximately 2,800 finished square feet, three bedrooms, and three full and one half bathrooms, this beautifully refreshed home is truly move-in ready. Newly refinished hardwood floors extend throughout the main and upper levels, complemented by interior paint in Benjamin Moore's Winter Orchard, creating a soft, cohesive palette throughout. Newly installed black iron staircase balusters add a sophisticated architectural touch. The refreshed kitchen features freshly painted white cabinetry, granite countertops, and brand-new stainless steel appliances. Upstairs, the primary suite offers a beautifully renovated bathroom and a custom-designed walk-in closet with thoughtfully designed built-ins. The additional bedrooms are generously sized, and the updated bathrooms continue the home's fresh, polished aesthetic. The finished lower level provides exceptional flexibility with new luxury vinyl plank flooring, an expansive recreation room, bar area, and a separate den or guest retreat. A full bathroom featuring a walk-in shower makes this level ideal for overnight guests, entertaining, or additional living space. The backyard is truly a special feature of this property. Fully fenced, beautifully landscaped, and framed by mature trees, this private outdoor retreat features a tranquil goldfish and koi pond with a soothing water feature. The covered patio creates the perfect setting for weekend cookouts, watching football with friends, or simply relaxing while enjoying the peaceful surroundings. It's an outdoor space designed to be enjoyed throughout the seasons. Significant improvements provide additional peace of mind, including a new roof, siding, and gutters in 2020, a new water heater in 2021, and extensive exterior painting in 2026. The home's exterior has been beautifully refreshed, including the trim, porch, and shutters and front door finished in striking Sherwin-Williams Tricorn Black. With its storybook neighborhood charm, peaceful tree-lined cul-de-sac setting, beautifully updated interiors, and exceptional outdoor living spaces, this home offers a rare combination of character, comfort, and convenience. Enjoy easy access to historic downtown Leesburg, charming boutiques, local restaurants, shopping, and major commuter routes, all while coming home to a neighborhood that feels wonderfully removed from the hustle and bustle.",
+      "agent_name": null,
+      "mls_id": "VALO2139240",
+      "_rank": -0.72
+    },
+    {
       "address": "806 Rust Dr NE, Leesburg, VA, 20176",
       "price": 689900,
       "distance_miles": 0.97,
@@ -908,7 +1002,7 @@
       "year_built": 1985,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 21,
+      "days_on_mls": 22,
       "hoa_fee": 21,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/806-Rust-Dr-NE_Leesburg_VA_20176_M56702-76589",
@@ -962,7 +1056,7 @@
       "description": "Beautifully updated and move in ready! Main level boasts open space with cozy family room with fireplace and built in shelving, separate dining room, and updated kitchen with stainless appliances and custom island. Kitchen walks out to freshly stained and oversized deck backing to large flat back yard, common space, and trees. This home has a much desired two car garage entering into laundry/mud room. Upper level had three spacious bedrooms with large closets and two updated baths. Lower level is fully finished with a large rec room, bonus room being used as a 4th bedroom, and large storage and utility area. Walk up stairs take you from the rec room to the beautiful private back yard. Fresh paint and new lighting throughout. Enjoy close proximity to schools, shopping, community pool and more. ROUGH IN FOR A FULL BATH IN THE BASEMENT. Excellent location and a move in ready home! Hurry!",
       "agent_name": null,
       "mls_id": "VALO2137968",
-      "_rank": -0.74
+      "_rank": -0.94
     },
     {
       "address": "128 Max Ct SE, Leesburg, VA, 20175",
@@ -976,7 +1070,7 @@
       "year_built": 2005,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 18,
+      "days_on_mls": 19,
       "hoa_fee": 84,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/128-Max-Ct-SE_Leesburg_VA_20175_M60849-80924",
@@ -1071,7 +1165,7 @@
       "description": "One of the few largest, stunningly Colonial in Sought-After Stowers Community! Welcome to this beautifully renovated 4-bedroom, 3.5-bath Colonial in the desirable Stowers community, offering an exceptional blend of modern updates, stylish finishes, and comfortable living. This move-in-ready home features brand-new wide-plank hardwood flooring throughout the main and upper levels, luxury vinyl flooring in the fully finished basement, and fresh paint throughout the entire home. The kitchen has been enhanced with a new cooktop, dishwasher, and refrigerator, adding both style and convenience to the heart of the home. The spacious and inviting floor plan features a cozy gas fireplace, bright living and dining areas, convenient upper-level laundry, and a fully finished walkout basement that provides versatile space for a recreation room, home theater, gym, office, or guest area. Step outside to enjoy the deck and patio-perfect for entertaining, grilling, or relaxing. The attached 2-car garage and asphalt driveway provide ample parking and storage. Residents of Stowers enjoy wonderful community amenities, including an outdoor swimming pool, tennis courts, and playgrounds. With extensive 2026 renovations and updates throughout, this exceptional home is truly move-in ready and designed to impress. Come see it for yourself and fall in love!",
       "agent_name": null,
       "mls_id": "VALO2136990",
-      "_rank": -0.82
+      "_rank": -1.02
     },
     {
       "address": "18278 Maple Spring Ct, Leesburg, VA, 20176",
@@ -1085,7 +1179,7 @@
       "year_built": 2000,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 9,
+      "days_on_mls": 10,
       "hoa_fee": 140,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/18278-Maple-Spring-Ct_Leesburg_VA_20176_M65456-46393",
@@ -1157,7 +1251,7 @@
       "description": "Welcome to Maple Spring Court, where comfort, space, and entertainment come together in the heart of Leesburg! Offering approximately 4,080 square feet of living space, this beautifully refreshed home features new carpeting, updated finishes, and an inviting layout designed for everyday living and entertaining. Step inside to discover spacious living areas, an inviting kitchen, and a bright sunroom perfect for relaxing year-round. The home's entertainment spaces are a standout, featuring a private home theater and a finished lower level ideal for hosting family and friends. Step outside and enjoy the backyard patio, outdoor entertaining areas, and basketball court. Whether you're hosting gatherings, enjoying movie nights, or simply unwinding at home, this property offers something for every occasion. Conveniently situated in Leesburg with access to shopping, dining, parks, and major commuter routes, this home offers an exceptional opportunity to enjoy spacious Northern Virginia living. Schedule your private showing today and experience everything Maple Spring Court has to offer!",
       "agent_name": null,
       "mls_id": "VALO2138656",
-      "_rank": -0.98
+      "_rank": -1.18
     },
     {
       "address": "131 Woodberry Rd NE, Leesburg, VA, 20176",
@@ -1171,7 +1265,7 @@
       "year_built": 1965,
       "stories": 1,
       "garage": 1,
-      "days_on_mls": 41,
+      "days_on_mls": 42,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/131-Woodberry-Rd-NE_Leesburg_VA_20176_M58626-02266",
@@ -1303,7 +1397,7 @@
       "year_built": 2004,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 42,
+      "days_on_mls": 43,
       "hoa_fee": 82,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/109-Max-Ct-SE_Leesburg_VA_20175_M63043-19671",
@@ -1390,7 +1484,7 @@
       "year_built": 2003,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 21,
+      "days_on_mls": 22,
       "hoa_fee": 69,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/608-Shanks-Evans-Rd-NE_Leesburg_VA_20176_M50249-09888",
@@ -1467,7 +1561,7 @@
       "description": "Brick-Front Colonial on a Corner Lot in Potomac Crossing | 5 BR | 3.5 BA | 3,700+ Sq Ft Set on a corner lot in the sought-after Potomac Crossing community, this well-maintained single family home offers more than 3,700 square feet of finished living space, with five bedrooms, 3.5 baths, and a 2-car-attached garage. Inside, cherry hardwood floors run throughout the main level. Large windows fill the living and dining rooms with sunlight, creating a warm setting for both everyday life and entertaining. The kitchen features granite countertops and a brand-new refrigerator. The spacious family room has a wood-burning fireplace, a ceiling fan, and a second staircase to the upper level. Upstairs has new carpet. The primary bedroom is notably large and includes dual walk-in closets, and the primary bath features a two-person Jacuzzi tub. The finished lower level adds flexible space with a large recreation area, a bedroom, a full bath, a gas fireplace, and new LVP flooring. A walk-up staircase with French doors leads to the yard. Outside, a screened porch with a knee wall blends indoor and outdoor living. The extensively landscaped grounds include hardscaping, privacy hedges in the backyard, landscape lighting, and an irrigation system. The home also has a newer roof. Potomac Crossing sits along the Potomac River, with nearby parkland, walking and hiking trails, playgrounds, a boat launch, and a neighborhood pool and clubhouse. Ball's Bluff Elementary is close by. Historic downtown Leesburg, with its 18th- and 19th-century architecture, restaurants, coffee shops, and independent boutiques, is a short drive away, as are breweries and vineyards. Everyday shopping is nearby too, including the Leesburg Corner Premium Outlets, Costco, Target, and Dick's Sporting Goods and Wegmans.",
       "agent_name": null,
       "mls_id": "VALO2137804",
-      "_rank": -3.86
+      "_rank": -4.06
     },
     {
       "address": "23320 Watson Rd, Leesburg, VA, 20175",
@@ -1481,7 +1575,7 @@
       "year_built": 1910,
       "stories": 3,
       "garage": null,
-      "days_on_mls": 2,
+      "days_on_mls": 3,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/23320-Watson-Rd_Leesburg_VA_20175_M62053-73183",
@@ -1554,7 +1648,7 @@
       "description": "Built in 1910 and set on 0.95 acre, this Cape Cod farmhouse keeps its character where it counts: exposed beams, exposed brick column upstairs, original trim and wide-plank floors. The main level carries the primary bedroom and both full baths, a living room and separate sitting room, and a white kitchen with a butcher-block island. Just off the kitchen and back door, the sunroom catches the most stunning morning light. Out front, a covered porch runs the width of the house. Two upper bedrooms sit under the beams. Outside you'll find a detached outbuilding, a coop, garden beds, a fire pit and room to spread out. Private well, newer septic, oil hot-water heat and central air.",
       "agent_name": null,
       "mls_id": "VALO2139048",
-      "_rank": -3.98
+      "_rank": -4.18
     },
     {
       "address": "39400 Crooked Bridge Ln, Leesburg, VA, 20175",
@@ -1568,7 +1662,7 @@
       "year_built": 1991,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 48,
+      "days_on_mls": 49,
       "hoa_fee": 167,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/39400-Crooked-Bridge-Ln_Leesburg_VA_20175_M51135-82715",
@@ -1655,7 +1749,7 @@
       "year_built": 2004,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 14,
+      "days_on_mls": 15,
       "hoa_fee": 104,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/151-Alpine-Dr-SE_Leesburg_VA_20175_M58011-54059",
@@ -1667,9 +1761,9 @@
       "value_score": -6.0,
       "last_sold_price": 550000,
       "last_sold_date": "2007-06-25 00:00:00",
-      "photo": "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m908462579od-w480_h360_x2.webp?w=1080&q=75",
+      "photo": "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m67628740od-w480_h360_x2.webp?w=1080&q=75",
       "alt_photos": [
-        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m908462579od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m67628740od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m525411130od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m3210887290od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m346411093od-w480_h360_x2.webp?w=1080&q=75",
@@ -1713,23 +1807,20 @@
         "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m2486943354od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m3331308111od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m1736852349od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m2425065186od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m73468320od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m2833965002od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m4017541487od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m3350380327od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m4266836367od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m374364177od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m2436009598od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m73468320od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m2425065186od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m3922246495od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m2833965002od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m909501121od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m2151894113od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m2887940070od-w480_h360_x2.webp?w=1080&q=75"
+        "https://ap.rdcpix.com/90b66236f7004661ef7e78cc0e126ffel-m3922246495od-w480_h360_x2.webp?w=1080&q=75"
       ],
       "description": "Welcome to 151 Alpine Drive SE, a beautifully maintained and extensively updated home located in the desirable Evergreen Meadows community of Leesburg. Offering approximately 4,084 square feet of finished living space across three levels, this spacious home features 5 bedrooms, 4 renovated bathrooms, a fully finished walkout basement, and an attached 2-car garage equipped with a Tesla charger. Freshly updated in 2026, the home features new carpet throughout and professionally resanded and refinished hardwood floors, creating a fresh, move-in-ready interior. The main level offers an inviting and functional layout highlighted by a beautiful stone fireplace and a spacious kitchen featuring double ovens, stainless-steel appliances, a walk-in pantry, and generous space for entertaining. A convenient laundry and mudroom adds to the home's everyday functionality. Upstairs, the generous primary suite provides a private retreat featuring a fully renovated primary bathroom and ample closet space. The additional bedrooms offer comfortable accommodations, including walk-in closets and access to updated bathrooms. The fully finished walkout basement is one of the home's most impressive features, offering exceptional space for entertainment, recreation, and guests. This level includes a dedicated theater room with surround sound, a wet bar, kitchenette, custom renovated full bathroom, and new luxury vinyl plank flooring. Whether hosting movie nights, entertaining guests, or enjoying additional living space, this versatile lower level offers outstanding functionality. Outside, enjoy a large composite deck overlooking the fenced backyard and peaceful wooded setting, providing an inviting outdoor space for relaxing and entertaining. Additional improvements include a roof replaced in 2019, water heater in 2023, HVAC system in 2016, garage door motors in 2021, and a blue-light dust-control system. The attached two-car garage also features a Tesla charger, providing added convenience for electric vehicle owners. Evergreen Meadows offers desirable community amenities, including a swimming pool, tennis courts, and clubhouse. Conveniently located near Historic Downtown Leesburg, Leesburg Premium Outlets, shopping, dining, and major commuter routes, this home combines generous living space, extensive updates, and an excellent Loudoun County location in an Excellent School District. With over 4,000 square feet of finished living space, a fully renovated primary bathroom, dedicated basement theater room, Tesla charging capability, and numerous recent improvements, 151 Alpine Drive SE offers exceptional comfort, versatility, and move-in-ready convenience. ***Get up to $4,000 with use of a preferred lender for closing cost assistance or use funds for a rate buy-down (restrictions apply and not all will qualify; contact the listing agent for details). **",
       "agent_name": null,
       "mls_id": "VALO2137720",
-      "_rank": -5.62
+      "_rank": -5.82
     },
     {
       "address": "702 Mount Holly Pl NE, Leesburg, VA, 20176",
@@ -1743,7 +1834,7 @@
       "year_built": 2002,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 27,
+      "days_on_mls": 28,
       "hoa_fee": 59,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/702-Mount-Holly-Pl-NE_Leesburg_VA_20176_M62338-00616",
@@ -1826,7 +1917,7 @@
       "description": "BIG SAVINGS FOR BUYERS! Now offering $10,000 in SELLER-PAID CLOSING COST ASSISTANCE! Use it toward your closing costs or to buy down your interest rate! PLUS, take advantage of an ADDITIONAL 0.50% INTEREST RATE REDUCTION FOR THE FIRST YEAR, courtesy of the lender, at NO COST to the buyer! Lower your upfront costs AND enjoy a lower monthly mortgage payment! An incredible opportunity to make your next home more affordable! Welcome to 702 Mount Holly Place NE, a spacious 4-bedroom, 3.5-bath home situated on a corner lot in sought-after Potomac Station, just minutes from historic downtown Leesburg. Step inside to a main level offering plenty of space to live, work, and gather, with formal living and dining rooms, a dedicated home office, and a cozy family room with a fireplace. The light-filled updated kitchen shines with crisp white cabinetry, gorgeous quartz countertops, and newer stainless steel appliances. Upstairs, the spacious primary suite features dual walk-in closets and a generous en suite bath. Three additional nicely sized bedrooms and a full hall bath complete the upper level. The finished walk-out lower level adds even more flexible living space with a large recreation room, den, full bath, and an expansive storage area. Outside, the corner lot offers a fenced yard along with a storage shed equipped with electricity, perfect for a workshop, hobbies, or additional storage. Major updates offer added peace of mind, including a new HVAC system (July 2026), roof (2022), sump pump (2024), water heater (2023), washer and dryer (2019), and fence (2018). Potomac Station offers an incredible community lifestyle with a clubhouse, Junior Olympic-sized pool, playgrounds, basketball and tennis/pickleball courts, walking trails, and year-round neighborhood events. Conveniently located just off Route 7 with easy access to shopping, dining, commuter routes, and all that downtown Leesburg has to offer, 702 Mount Holly Place is ready to welcome you home.",
       "agent_name": null,
       "mls_id": "VALO2137506",
-      "_rank": -5.74
+      "_rank": -5.94
     },
     {
       "address": "108 Haversack Ct NE, Leesburg, VA, 20176",
@@ -1840,7 +1931,7 @@
       "year_built": 1997,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 29,
+      "days_on_mls": 30,
       "hoa_fee": 67,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/108-Haversack-Ct-NE_Leesburg_VA_20176_M54436-32127",
@@ -1852,8 +1943,9 @@
       "value_score": -3.6,
       "last_sold_price": 775000,
       "last_sold_date": "2024-10-11 00:00:00",
-      "photo": "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m1130096990od-w480_h360_x2.webp?w=1080&q=75",
+      "photo": "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m464155623od-w480_h360_x2.webp?w=1080&q=75",
       "alt_photos": [
+        "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m464155623od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m1130096990od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m1864318670od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m2642845998od-w480_h360_x2.webp?w=1080&q=75",
@@ -1864,7 +1956,6 @@
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m548708921od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m2287251541od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m3546383300od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m464155623od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m1497036251od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m1449577336od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m3846017152od-w480_h360_x2.webp?w=1080&q=75",
@@ -1907,12 +1998,15 @@
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m3828459456od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m2706066629od-w480_h360_x2.webp?w=1080&q=75",
         "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m3932749651od-w480_h360_x2.webp?w=1080&q=75",
-        "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m3100429419od-w480_h360_x2.webp?w=1080&q=75"
+        "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m3100429419od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m1063104975od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m408381928od-w480_h360_x2.webp?w=1080&q=75",
+        "https://ap.rdcpix.com/8d022c54b9da55cc5e2dac4407558f46l-m1623509648od-w480_h360_x2.webp?w=1080&q=75"
       ],
-      "description": "Special INCENTIVE offered by seller to temporarily buy down rate! Inquire about significant monthly savings with acceptable contract**Since purchasing this home in late 2024, the homeowners have made a significant investment in its comfort, efficiency, and appearance-thoughtfully improving the property with the intention of enjoying it for years to come. The result is a beautifully refreshed Lockmeade model offering nearly 3,300 finished square feet on three levels, 4 bedrooms, 3.5 baths, and a large, level, fenced backyard at the end of a quiet cul-de-sac. Among the most impressive improvements is the completely reimagined primary bath, a substantial renovation featuring a custom shower, upgraded vanities and fixtures, and enhanced electrical features. The home has also benefited from extensive interior and exterior painting, new flooring and carpet throughout the main and upper levels, replacement of all upper-level windows plus four additional windows, and significant HVAC and insulation improvements. The dramatic family room features vaulted ceilings, a wall of windows, recessed LED lighting, and a custom-built fireplace. Lighting throughout the home has been extensively upgraded with new fixtures, ceiling fans, recessed LEDs, dimmers, and motion-sensor exterior lighting. The hall bath and laundry room have also been renovated, with the laundry room receiving a new floor drain and washer and dryer. The finished lower level provides wonderful flexibility with recreation and media space, a full bath, abundant storage, and a dedicated gym enhanced with water and electrical improvements. Additional investments include radon mitigation, upgraded blinds throughout, exterior electrical outlets, deck lighting and power, a new deck landing, attic and garage insulation, exterior repairs and maintenance, landscaping enhancements, and more. Outside, enjoy a large, level fully fenced back yard, enhanced deck and three-season sunroom-ideal spaces for relaxing, entertaining, or play. These homeowners have truly cared for this property, addressing both the improvements you can see and many of the important items you cannot. Location is another standout. Potomac Crossing is ideally situated near historic downtown Leesburg and the natural beauty and walking trails of Ball's Bluff Battlefield Regional Park, while everyday conveniences are just minutes away. Enjoy easy access to Leesburg Premium Outlets, Target, Costco, restaurants, shopping and entertainment-offering a wonderful combination of neighborhood living, outdoor recreation and day-to-day convenience. Potomac Crossing offers a community pool, playgrounds, walking trails, and tennis. Video and audio recording onsite**",
+      "description": "Location, location! Super close and down the street (0.8 miles) to the new Veteran's Park at Balls Bluff! This park offers Potomac river access, walking trails and parking. Special INCENTIVE offered by seller to temporarily buy down rate! Inquire about significant monthly savings with acceptable contract**Since purchasing this home in late 2024, the homeowners have made a significant investment in its comfort, efficiency, and appearance-thoughtfully improving the property with the intention of enjoying it for years to come. The result is a beautifully refreshed Lockmeade model offering nearly 3,300 finished square feet on three levels, 4 bedrooms, 3.5 baths, and a large, level, fenced backyard at the end of a quiet cul-de-sac. Among the most impressive improvements is the completely reimagined primary bath, a substantial renovation featuring a custom shower, upgraded vanities and fixtures, and enhanced electrical features. The home has also benefited from extensive interior and exterior painting, new flooring and carpet throughout the main and upper levels, replacement of all upper-level windows plus four additional windows, and significant HVAC and insulation improvements. The dramatic family room features vaulted ceilings, a wall of windows, recessed LED lighting, and a custom-built fireplace. Lighting throughout the home has been extensively upgraded with new fixtures, ceiling fans, recessed LEDs, dimmers, and motion-sensor exterior lighting. The hall bath and laundry room have also been renovated, with the laundry room receiving a new floor drain and washer and dryer. The finished lower level provides wonderful flexibility with recreation and media space, a full bath, abundant storage, and a dedicated gym enhanced with water and electrical improvements. Additional investments include radon mitigation, upgraded blinds throughout, exterior electrical outlets, deck lighting and power, a new deck landing, attic and garage insulation, exterior repairs and maintenance, landscaping enhancements, and more. Outside, enjoy a large, level fully fenced back yard, enhanced deck and three-season sunroom-ideal spaces for relaxing, entertaining, or play. These homeowners have truly cared for this property, addressing both the improvements you can see and many of the important items you cannot. Location is another standout. Potomac Crossing is ideally situated near historic downtown Leesburg and the natural beauty and walking trails of Ball's Bluff Battlefield Regional Park, while everyday conveniences are just minutes away. Enjoy easy access to Leesburg Premium Outlets, Target, Costco, restaurants, shopping and entertainment-offering a wonderful combination of neighborhood living, outdoor recreation and day-to-day convenience. Potomac Crossing offers a community pool, playgrounds, walking trails, and tennis. Video and audio recording onsite**",
       "agent_name": null,
       "mls_id": "VALO2137464",
-      "_rank": -6.28
+      "_rank": -6.48
     },
     {
       "address": "43417 Spring Cellar Ct, Leesburg, VA, 20176",
@@ -1926,7 +2020,7 @@
       "year_built": 2004,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 39,
+      "days_on_mls": 40,
       "hoa_fee": 280,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/43417-Spring-Cellar-Ct_Leesburg_VA_20176_M61174-65086",
@@ -2012,7 +2106,7 @@
       "year_built": 1923,
       "stories": 3,
       "garage": null,
-      "days_on_mls": 46,
+      "days_on_mls": 48,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/39014-Hughesville-Rd_Leesburg_VA_20175_M93437-70511",
@@ -2103,7 +2197,7 @@
       "year_built": 1987,
       "stories": 2,
       "garage": 3,
-      "days_on_mls": 4,
+      "days_on_mls": 5,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/43118-Evans-Pond-Rd_Leesburg_VA_20176_M59782-16444",
@@ -2172,7 +2266,7 @@
       "description": "Looking for Space, Privacy & a Beautiful Place to Call Home? Welcome to 43118 Evans Pond Rd, Leesburg, VA 20176! This spacious 4-bedroom, 3-full-bath home sits on an impressive 6.11 acres, offering the peaceful setting and room to spread out that can be hard to find in Leesburg. Freshly painted New windows 4 bedrooms 3 full bathrooms 6.11 beautiful acres Spacious home with plenty of room inside and out Imagine enjoying your morning coffee surrounded by mature trees, hosting family and friends, or simply coming home to your own private retreat. Pictures don't show just how much this property has to offer-you need to see it in person! Schedule your private showing today! Offers will be reviewed November 3, 2026.",
       "agent_name": null,
       "mls_id": "VALO2137328",
-      "_rank": -7.96
+      "_rank": -8.16
     },
     {
       "address": "43081 Binkley Cir, Leesburg, VA, 20176",
@@ -2186,7 +2280,7 @@
       "year_built": 1996,
       "stories": 2,
       "garage": 2,
-      "days_on_mls": 68,
+      "days_on_mls": 69,
       "hoa_fee": 94,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/43081-Binkley-Cir_Leesburg_VA_20176_M54423-65605",
@@ -2250,7 +2344,7 @@
       "year_built": 1961,
       "stories": 2,
       "garage": 2,
-      "days_on_mls": 89,
+      "days_on_mls": 90,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/39030-Mount-Gilead-Rd_Leesburg_VA_20175_M62826-96161",
@@ -2335,7 +2429,7 @@
       "year_built": 2012,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 23,
+      "days_on_mls": 24,
       "hoa_fee": 151,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/43146-Rocks-Way_Leesburg_VA_20176_M54147-76669",
@@ -2447,7 +2541,7 @@
       "description": "Welcome to this stunning home in Elysian Heights, 43146 Rocks Way is a beautifully maintained home that offers generous living space, thoughtful updates and an exceptional setting. Positioned across from open space with sweeping mountain vistas, deep-sky stars and planetary horizons, and a rare sense of pastoral tranquility, all within remarkable reach of farm-fresh markets, local wineries and breweries and endless outdoor recreation, all just minutes from shopping, dining and major commuter routes and the Point of Rocks MARC Train. The main level and bedrooms showcases rich hardwood flooring and neutral fresh paint throughout. The well-lit private office seamlessly connects the formal living and dining areas to the open-concept family room and eat-in kitchen, complete with a modern 2-tone island, granite countertops and stainless-steel appliances. With 5 bedrooms and 3.5 full baths and an impressive primary suite featuring a walk-in closet and a spa-like-en-suite bath, this home seamlessly blends luxury and comfort. All year around step out onto the extensive and dreamy composite back deck and take in the breathtaking, sky-filled sunsets over the mountains-your nightly show awaits. The walk-out lower-level leads to a paver patio, fire pit, and a perfectly sloped backyard ready for gatherings and play. The beautiful mature Cherry trees will burst into a gorgeous canopy of pink blossoms every Spring, offering unmatched curb appeal and peaceful summer shade. Recent improvements include 6 yr old roof, new refrigerator, custom cabinetry in garage and on-time routine HVAC maintenance. Elysian Heights residents enjoy an exceptional lifestyle with access to a clubhouse, pool, tennis and basketball courts, and thoughtfully designed playgrounds.",
       "agent_name": null,
       "mls_id": "VALO2137846",
-      "_rank": -13.8
+      "_rank": -14.0
     },
     {
       "address": "13544 Arcadian Dr, Leesburg, VA, 20176",
@@ -2461,7 +2555,7 @@
       "year_built": 2008,
       "stories": 3,
       "garage": 2,
-      "days_on_mls": 60,
+      "days_on_mls": 61,
       "hoa_fee": 151,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/13544-Arcadian-Dr_Leesburg_VA_20176_M58385-16728",
@@ -2537,7 +2631,7 @@
       "year_built": 1900,
       "stories": 2,
       "garage": null,
-      "days_on_mls": 83,
+      "days_on_mls": 84,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/42277-Chestnut-Hill-Ln_Leesburg_VA_20176_M69384-40309",
@@ -2626,7 +2720,7 @@
       "year_built": 1950,
       "stories": 2,
       "garage": null,
-      "days_on_mls": 28,
+      "days_on_mls": 29,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/130-Fort-Evans-Rd-NE_Leesburg_VA_20176_M58963-01898",
@@ -2687,7 +2781,7 @@
       "description": "This charming Cape Cod-style home, built in 1950, offers 1,638 sq. ft. of living space on a generous 0.99-acre corner lot in the desirable Leesburg neighborhood. The interior features a cozy kitchen with table space, perfect for casual dining, and a welcoming living area highlighted by a wood-burning fireplace. With four bedrooms and two full bathrooms, this home provides ample space for relaxation and comfort. Enjoy outdoor living with a wrap-around porch and deck, ideal for entertaining or unwinding. Additional exterior features include secure storage options and outbuildings, enhancing functionality. The property is conveniently located near public transportation, commuter lots, and an airport, ensuring easy access to the surrounding area Local amenities, including parks and shopping, are just a short drive away, making this home a perfect blend of tranquility and convenience. Off-street parking is available for added convenience. For investors and developers, this property is Zoned R-6 (Moderate Density Residential) within the Town of Leesburg. R-6 zoning permits single-family detached homes, duplexes and cluster development by right, subject to applicable Town requirements. Approximately 0.99-acre parcel offers potential redevelopment opportunities given its size and Leesburg location. Buyers and developers should independently verify allowable density, subdivision potential, rezoning opportunities and intended use with the Town of Leesburg. Property is being marketed for its existing residential use as well as its potential redevelopment opportunities.",
       "agent_name": null,
       "mls_id": "VALO2135736",
-      "_rank": -20.9
+      "_rank": -21.1
     },
     {
       "address": "12831 James Monroe Hwy, Leesburg, VA, 20176",
@@ -2701,7 +2795,7 @@
       "year_built": 1960,
       "stories": 1,
       "garage": null,
-      "days_on_mls": 19,
+      "days_on_mls": 20,
       "hoa_fee": 0,
       "new_construction": false,
       "url": "https://www.realtor.com/realestateandhomes-detail/12831-James-Monroe-Hwy_Leesburg_VA_20176_M55846-02187",
@@ -2762,7 +2856,7 @@
       "description": "Northern Loudoun County is a beautiful area of rolling hills, mountain views, and historic places. All-brick ranch house on a scenic highway with the opportunity for a roadside farm stand or food truck. Almost 2 acres of land with a pond and a seasonal stream. No HOA. Zoned AR-1. New roof. Newly remodeled kitchen with white cabinets and a farmhouse sink. Genuine hardwood floors. New paint throughout. Shop in Leesburg or the Lovettsville Co-op Market. Explore Lucketts Antiques for charming, unique finds. Nearby Lovettsville has great cafes, restaurants, and shops, not to mention the annual Oktoberfest held in late September. Also close, historic Waterford (a National Historic Landmark) is a charming, well-preserved 18th and 19th-century village that hosts the fantastic Waterford Fair each year in October. Cross over the Potomac River to visit Frederick, Harper's Ferry, or Brunswick. A commuter train to Washington, D.C. is available from Point of Rocks, MD (only 3 miles away). Point of Rocks also has a boat launch on the Potomac River and the C&O Canal towpath, a walking & bike path that goes all the way to Georgetown. This is a great place to relax and enjoy all four seasons. Listen to spring peeper frogs sing next to your pond and watch daffodils pop up around your yard. In summer, watch hummingbirds and butterflies while enjoying a cup of coffee on the back porch. Visit your raised-bed garden to snack on fresh cherry tomatoes. In fall, harvest from your paw paw and fig trees and watch the leaves on the mountainside change color. When the weather gets chilly, sit by your campfire or in front of your wood-burning stove. Love where you live!",
       "agent_name": null,
       "mls_id": "VALO2137114",
-      "_rank": -31.44
+      "_rank": -31.64
     }
   ]
 }
